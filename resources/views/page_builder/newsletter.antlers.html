@@ -1,0 +1,36 @@
+<section class="jw_newsletter_section">
+	<div class="jw_container">
+		<div class="jw_newsletter_wrap">
+			<div class="jw_newsletter_col_top">
+				<div class="jw_newsletter_images jw_newsletter_images_left jw_images_cover jw_data_title content__item" data-title="{{ image_left_title ?? 'Want some news' }}">
+					<img class="content__item-img" src="{{ partial:partials/media-url :file="image_left" fallback="image/images-12.jpg" }}" alt="">
+					<div class="content__item-title"></div>
+				</div>
+				<div class="jw_newsletter_images jw_newsletter_images_right jw_images_cover jw_data_title content__item" data-title="{{ image_right_title ?? 'Want some news' }}">
+					<img class="content__item-img" src="{{ partial:partials/media-url :file="image_right" fallback="image/images-13.jpg" }}" alt="">
+					<div class="content__item-title"></div>
+				</div>
+			</div>
+			<div class="jw_newsletter_form_content">
+				<h2 class="jw_sub_title" data-aos="fade-down" data-aos-duration="1000">{{ heading ?? 'Want some news?' }}</h2>
+				{{ form:newsletter class="js-theme-form jw_newsletter_form" data-aos="fade-up" data-aos-duration="1000" }}
+					<label class="sr-only" for="haven-nl-email">Email</label>
+					<input id="haven-nl-email" type="email" name="email" required placeholder="{{ placeholder ?? 'Email' }}">
+					<button type="submit">{{ setting:newsletter_button ?? 'Subscribe' }}</button>
+					<div class="stay-connect-alert" role="alert"></div>
+					<div class="stay-connect-success">{{ setting:newsletter_success ?? 'Thanks — you are on the list.' }}</div>
+				{{ /form:newsletter }}
+			</div>
+			<div class="jw_newsletter_col_bottom">
+				<div class="jw_newsletter_images jw_newsletter_images_left jw_images_cover jw_data_title content__item" data-title="{{ image_bottom_left_title ?? 'Want some news' }}">
+					<img class="content__item-img" src="{{ partial:partials/media-url :file="image_bottom_left" fallback="image/images-14.jpg" }}" alt="">
+					<div class="content__item-title"></div>
+				</div>
+				<div class="jw_newsletter_images jw_newsletter_images_right jw_images_cover jw_data_title content__item" data-title="{{ image_bottom_right_title ?? 'Want some news' }}">
+					<img class="content__item-img" src="{{ partial:partials/media-url :file="image_bottom_right" fallback="image/images-14.jpg" }}" alt="">
+					<div class="content__item-title"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

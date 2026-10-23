@@ -1,0 +1,5 @@
+title: Cart inquiry
+email:
+  -
+    to: admin@example.com
+    html: emails/cart_inquiry

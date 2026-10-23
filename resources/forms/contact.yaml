@@ -1,0 +1,5 @@
+title: Contact
+email:
+  -
+    to: admin@example.com
+    html: emails/contact

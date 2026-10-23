@@ -1,0 +1,18 @@
+<section class="jw_shop_stores_section">
+	<div class="jw_container">
+		<h1 class="jw_sub_title">{{ title ?? (category_slug | deslugify | title) ?? 'Shop' }}</h1>
+		<div class="jw_shop_stores_wrap">
+			{{ collection:products taxonomy:categories="{category_slug}" sort="order:asc" }}
+			<div class="jw_shop_stores_card_box">
+				<a href="{{ url }}" class="jw_shop_stores_images jw_images_cover">
+					<img src="{{ partial:partials/media-url :file="image" fallback="image/images-19.jpg" }}" alt="{{ title }}">
+				</a>
+				<div class="jw_shop_stores_card_box_content">
+					<h5><a href="{{ url }}">{{ title }}</a></h5>
+					{{ if price }}<p>${{ price }}</p>{{ /if }}
+				</div>
+			</div>
+			{{ /collection:products }}
+		</div>
+	</div>
+</section>

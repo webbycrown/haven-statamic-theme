@@ -1,0 +1,65 @@
+<section class="jw_blog_detail_page_section item">
+	<div class="jw_container">
+		<div class="jw_blog_detail_page_title">
+			{{ if date }}<p>{{ date format="M,j Y" }}</p>{{ /if }}
+			<h3 class="jw_sub_title_2">{{ title }}</h3>
+		</div>
+		<div class="jw_blog_detail_page_wrap">
+			<div class="jw_blog_detail_page_images jw_images_cover">
+				<img class="item__img" src="{{ partial:partials/media-url :file="image" fallback="image/images-19.jpg" }}" alt="{{ title }}">
+			</div>
+			<div class="jw_blog_detail_page_content">
+				{{ if excerpt }}<p>{{ excerpt }}</p>{{ /if }}
+				{{ if content }}{{ content }}{{ /if }}
+				{{ if aside_title || aside_text }}
+				<div class="jw_custom_tab_wrap">
+					<div class="jw_custom_tab_col">
+						{{ if aside_title }}<p class="jw_custom_tab_title">{{ aside_title }}</p>{{ /if }}
+						{{ if aside_text }}<p class="jw_custom_tab_desc">{{ aside_text }}</p>{{ /if }}
+					</div>
+				</div>
+				{{ /if }}
+				{{ if quote }}
+				<div class="jw_blog_detail_quotes">
+					<h5>“</h5>
+					<h6>{{ quote }}</h6>
+				</div>
+				{{ /if }}
+				{{ if aside_two_title || aside_two_text }}
+				<div class="jw_custom_tab_wrap">
+					<div class="jw_custom_tab_col">
+						{{ if aside_two_title }}<p class="jw_custom_tab_title">{{ aside_two_title }}</p>{{ /if }}
+						{{ if aside_two_text }}<p class="jw_custom_tab_desc">{{ aside_two_text }}</p>{{ /if }}
+					</div>
+				</div>
+				{{ /if }}
+				{{ if image_two || image_three || side_copy }}
+				<div class="jw_blog_detail_releted">
+					{{ if image_two || image_three }}
+					<div class="jw_blog_detail_releted_images">
+						{{ if image_two }}
+						<div class="jw_blog_detail_releted_images_first jw_images_cover content__item">
+							<img class="content__item-img" src="{{ partial:partials/media-url :file="image_two" }}" alt="">
+							<div class="content__item-title"></div>
+						</div>
+						{{ /if }}
+						{{ if image_three }}
+						<div class="jw_blog_detail_releted_images_last jw_images_cover content__item">
+							<img class="content__item-img" src="{{ partial:partials/media-url :file="image_three" }}" alt="">
+							<div class="content__item-title"></div>
+						</div>
+						{{ /if }}
+					</div>
+					{{ /if }}
+					{{ if side_copy }}
+					<div class="jw_blog_detail_releted_content">
+						{{ side_copy }}
+					</div>
+					{{ /if }}
+				</div>
+				{{ /if }}
+				{{ if closing }}{{ closing }}{{ /if }}
+			</div>
+		</div>
+	</div>
+</section>

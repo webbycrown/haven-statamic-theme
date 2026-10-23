@@ -1,0 +1,19 @@
+<section class="jw_home_hero_section" data-aos="zoom-in-down" data-aos-duration="1000">
+	<div class="jw_container">
+		<div class="jw_hero_content">
+			<div class="swiper mySwiper">
+				<div class="swiper-wrapper">
+					{{ slides }}
+					<div class="swiper-slide">
+						<div class="jw_home_hero_images jw_images_cover">
+							<img src="{{ partial:partials/media-url :file="image" fallback="image/images-1.jpg" }}" alt="{{ title }}">
+						</div>
+						{{ if title }}<h1 class="jw_title">{{ title }}</h1>{{ /if }}
+						{{ if kicker }}<h4>{{ kicker }}</h4>{{ elseif setting:industry_label }}<h4>{{ setting:industry_label }}</h4>{{ else }}<h4>Haven Store</h4>{{ /if }}
+					</div>
+					{{ /slides }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,95 @@
+{{ if style == "page" }}
+<section class="jw_blog_page_section">
+	<div class="jw_container">
+		<div class="jw_blog_page_wrap">
+			<div class="jw_blog_page_title">
+				<h2 class="jw_sub_title">{{ heading ?? 'Blogs' }}</h2>
+				{{ if text }}<p>{{ text }}</p>{{ /if }}
+			</div>
+			<div class="jw_blog_page_wrap">
+				{{ collection:blogs paginate="{limit ?? 6}" sort="date:desc" as="posts" }}
+					{{ posts }}
+					<div class="jw_blog_page_box">
+						{{ if (count | mod:2) != 0 }}
+						<div class="jw_blog_page_images jw_images_cover content__item">
+							<img class="content__item-img" src="{{ partial:partials/media-url :file="image" fallback="image/images-16.jpg" }}" alt="{{ title }}">
+							<div class="content__item-title"></div>
+						</div>
+						<div class="jw_blog_page_content">
+							{{ if date }}<p>{{ date format="M,j Y" }}</p>{{ /if }}
+							<h5>{{ title }}</h5>
+							<a class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+						</div>
+						{{ else }}
+						<div class="jw_blog_page_content">
+							{{ if date }}<p>{{ date format="M,j Y" }}</p>{{ /if }}
+							<h5>{{ title }}</h5>
+							<a class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+						</div>
+						<div class="jw_blog_page_images jw_images_cover content__item">
+							<img class="content__item-img" src="{{ partial:partials/media-url :file="image" fallback="image/images-16.jpg" }}" alt="{{ title }}">
+							<div class="content__item-title"></div>
+						</div>
+						{{ /if }}
+					</div>
+					{{ /posts }}
+					{{ paginate }}
+					{{ if total_pages > 1 }}
+					<div class="jw_pagination_wrap">
+						<ul>
+							<li class="page-item">
+								{{ if prev_page }}<a href="{{ prev_page }}" aria-label="Previous page"><span class="material-symbols-sharp" aria-hidden="true">chevron_left</span></a>{{ else }}<span class="material-symbols-sharp" aria-hidden="true">chevron_left</span>{{ /if }}
+							</li>
+							{{ links:segments }}
+								{{ if page }}
+								<li class="page-item"><a href="{{ url }}">{{ page }}</a></li>
+								{{ /if }}
+							{{ /links:segments }}
+							<li class="page-item">
+								{{ if next_page }}<a href="{{ next_page }}" aria-label="Next page"><span class="material-symbols-sharp" aria-hidden="true">chevron_right</span></a>{{ else }}<span class="material-symbols-sharp" aria-hidden="true">chevron_right</span>{{ /if }}
+							</li>
+						</ul>
+					</div>
+					{{ /if }}
+					{{ /paginate }}
+				{{ /collection:blogs }}
+			</div>
+		</div>
+	</div>
+</section>
+{{ else }}
+<section class="jw_blog_section">
+	<div class="jw_container">
+		<div class="jw_slider_arrow_wrap">
+			<div class="jw_blog_content">
+				<h3 class="jw_sub_title_2">{{ heading ?? 'Blogs' }}</h3>
+				{{ if text }}<p>{{ text }}</p>{{ /if }}
+			</div>
+			<div class="jw_blog_slider_arrow">
+				<div class="swiper-button-prev"><span class="material-symbols-sharp" aria-hidden="true">arrow_back_ios</span></div>
+				<div class="swiper-button-next"><span class="material-symbols-sharp" aria-hidden="true">arrow_forward_ios</span></div>
+			</div>
+		</div>
+		<div class="jw_blog_wrap">
+			<div class="swiper mySwiper">
+				<div class="swiper-wrapper">
+					{{ collection:blogs limit="{limit ?? 3}" sort="date:desc" }}
+					<div class="swiper-slide">
+						<div class="jw_blog_card_box">
+							<div class="jw_blog_images jw_images_cover">
+								<img src="{{ partial:partials/media-url :file="image" fallback="image/images-16.jpg" }}" alt="{{ title }}">
+							</div>
+							<div class="jw_blog_card_box_content">
+								{{ if date }}<p>{{ date format="M,j Y" }}</p>{{ /if }}
+								<h5>{{ title }}</h5>
+								<a class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+							</div>
+						</div>
+					</div>
+					{{ /collection:blogs }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{{ /if }}

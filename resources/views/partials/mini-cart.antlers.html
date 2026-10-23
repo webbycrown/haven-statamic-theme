@@ -1,0 +1,33 @@
+<div class="jw_mini_crat_wrap">
+	<div class="jw_mini_crat_col">
+		<div class="jw_mini_crat_title">
+			<h4>Your Cart</h4>
+			<a href="javascript:;" class="jw_mini_crat_close" aria-label="Close cart"><span class="material-symbols-sharp" aria-hidden="true">close</span></a>
+		</div>
+		<div class="jw_mini_crat_product_col">
+			{{ haven_cart }}
+			<div class="jw_mini_cart_product">
+				<div class="jw_mini_cart_product_img jw_images_cover">
+					<img src="{{ image }}" alt="">
+				</div>
+				<div>
+					<h5><a href="{{ url }}">{{ title }}</a></h5>
+					<p>{{ qty }} × {{ price_label }}</p>
+				</div>
+				<div>
+					<p>{{ total_label }}</p>
+				</div>
+			</div>
+			{{ /haven_cart }}
+			{{ unless haven_cart }}
+			<p>Your cart is empty.</p>
+			{{ /unless }}
+		</div>
+		<div class="jw_mini_crat_totle">
+			<h5><span class="jw_totle_text">Total</span></h5>
+			<p><span class="jw_totle_price">{{ haven_cart_subtotal ?? '$0.00' }}</span></p>
+		</div>
+	</div>
+	<a class="jw_custom_buttom" href="/cart"><span>View Cart</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+	<a class="jw_custom_buttom" href="/cart#inquiry"><span>Send inquiry</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+</div>

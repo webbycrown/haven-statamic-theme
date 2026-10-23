@@ -1,0 +1,5 @@
+title: Newsletter
+fields:
+  -
+    handle: email
+    field: { type: text, display: Email, validate: 'required|email' }

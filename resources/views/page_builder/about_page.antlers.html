@@ -1,0 +1,49 @@
+<section class="jw_about_hero_section">
+	<div class="jw_container">
+		<div class="jw_about_hero_wrap">
+			<div class="jw_about_hero_title">
+				<h2 class="jw_sub_title">{{ heading ?? title }}</h2>
+			</div>
+			<div class="jw_about_hero_content">
+				{{ paragraphs }}
+					{{ if text }}<p>{{ text }}</p>{{ /if }}
+				{{ /paragraphs }}
+			</div>
+		</div>
+	</div>
+</section>
+<section class="jw_about_page_section item">
+	<div class="jw_container">
+		<div class="jw_about_page_wrap first">
+			<div class="jw_about_page_images">
+				<div class="jw_images_cover">
+					<img class="item__img" src="{{ partial:partials/media-url :file="image" fallback="image/images-3.jpg" }}" alt="">
+				</div>
+			</div>
+			<div class="jw_about_page_content">
+				{{ if lead }}<h4>{{ lead }}</h4>{{ /if }}
+			</div>
+		</div>
+		<div class="jw_about_page_wrap second">
+			<div class="jw_about_page_content">
+				{{ points }}
+					{{ if text }}<p>{{ text }}</p>{{ /if }}
+				{{ /points }}
+			</div>
+			<div class="jw_about_page_images">
+				<div class="jw_images_cover content__item">
+					<img class="content__item-img" src="{{ partial:partials/media-url :file="image_two" fallback="image/images-20.jpg" }}" alt="">
+					<div class="content__item-title"></div>
+				</div>
+			</div>
+		</div>
+		{{ if year || year_label || notes }}
+		<div class="jw_about_page_description">
+			{{ if year || year_label }}<h5><span>{{ year }}</span> {{ year_label }}</h5>{{ /if }}
+			{{ notes }}
+				{{ if text }}<p>{{ text }}</p>{{ /if }}
+			{{ /notes }}
+		</div>
+		{{ /if }}
+	</div>
+</section>

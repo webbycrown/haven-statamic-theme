@@ -1,0 +1,28 @@
+<div class="jw_menubar_wrap" id="jw-menubar">
+	<div class="jw_menubar_imgaes">
+		<img src="{{ partial:partials/media-url :file="setting:menu_image" fallback="image/images-2.jpg" }}" alt="">
+	</div>
+	<div class="jw_menubar_content">
+		<button type="button" class="jw_menubar_close" aria-label="Close menu">
+			<span class="material-symbols-rounded" aria-hidden="true">close</span>
+		</button>
+		<a href="/" class="jw_menubar_logo">
+			<img src="{{ partial:partials/media-url :file="setting:logo" fallback="image/haven-logo.png" }}" alt="{{ setting:site_name ?? 'Haven' }}">
+		</a>
+		<ul class="jw_menubar_menu">
+			{{ nav:header_menu }}
+			{{ if children }}
+			<li class="jw_drop_down_wrap"><span class="jw_menubar_menu_star"></span><button type="button" class="jw_dropdown_click" aria-expanded="false" aria-controls="jw-sub-{{ index }}">{{ title }} <span class="material-symbols-sharp" aria-hidden="true">expand_more</span></button>
+				<ul class="jw_dropdown_menu" id="jw-sub-{{ index }}">
+					{{ children }}
+					<li><a class="jw_dropdown_item" href="{{ url }}">{{ title }}</a></li>
+					{{ /children }}
+				</ul>
+			</li>
+			{{ else }}
+			<li><span class="jw_menubar_menu_star"></span><a href="{{ url }}">{{ title }}</a></li>
+			{{ /if }}
+			{{ /nav:header_menu }}
+		</ul>
+	</div>
+</div>

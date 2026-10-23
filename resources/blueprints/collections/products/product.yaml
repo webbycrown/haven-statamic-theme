@@ -1,0 +1,40 @@
+title: Product
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field: { type: text, required: true, validate: required }
+          -
+            handle: image
+            field: { type: assets, container: assets, max_files: 1, display: Image }
+          -
+            handle: price
+            field: { type: float, display: Price }
+          -
+            handle: description
+            field: { type: textarea, display: Description }
+          -
+            handle: details
+            field: { type: textarea, display: 'Full description' }
+          -
+            handle: reviews
+            field:
+              type: grid
+              display: Reviews
+              fields:
+                -
+                  handle: name
+                  field: { type: text, display: Name }
+                -
+                  handle: rating
+                  field: { type: integer, display: Rating }
+                -
+                  handle: text
+                  field: { type: textarea, display: Review }
+          -
+            handle: categories
+            field: { type: terms, taxonomies: [categories], display: Categories }

@@ -1,0 +1,28 @@
+title: Setting
+data:
+  site_name: Haven
+  industry: apparel
+  industry_label: Apparel store
+  logo: image/haven-logo.png
+  footer_logo: image/haven-footer-logo.png
+  favicon: image/haven-mark.png
+  menu_image: image/images-2.jpg
+  phone: '+1 555 0100'
+  email: hello@haven.example
+  address: '120 Market Street, Portland'
+  copyright: '© Haven. All rights reserved.'
+  facebook_url: 'https://www.facebook.com/'
+  instagram_url: 'https://www.instagram.com/'
+  twitter_url: 'https://x.com/'
+  contact_button: Send message
+  contact_success: Thanks — we will reply soon.
+  newsletter_button: Subscribe
+  newsletter_success: Thanks — you are on the list.
+  add_to_cart_label: Add to cart
+  related_heading: You may also like
+  currency_symbol: '$'
+  inquiry_note: 'Nothing on this shop is charged. Send the bag as an inquiry and the studio will reply.'
+  cart_button: Send inquiry
+  product_button: Send inquiry
+  product_success: 'Thanks — we will reply about this piece.'
+  seo_description: Haven is a lifestyle shop for clothing, furniture, jewellery, and goods for the house.

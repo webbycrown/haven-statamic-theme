@@ -1,0 +1,29 @@
+title: Cart inquiry
+fields:
+  -
+    handle: name
+    field: { type: text, display: Name, validate: required }
+  -
+    handle: email
+    field: { type: text, display: Email, validate: 'required|email' }
+  -
+    handle: street
+    field: { type: text, display: 'Street address' }
+  -
+    handle: city
+    field: { type: text, display: City }
+  -
+    handle: state
+    field: { type: text, display: State }
+  -
+    handle: zip
+    field: { type: text, display: 'Zip code' }
+  -
+    handle: ship_street
+    field: { type: text, display: 'Shipping street' }
+  -
+    handle: cart_summary
+    field: { type: text, display: 'Cart summary' }
+  -
+    handle: message
+    field: { type: textarea, display: Message }

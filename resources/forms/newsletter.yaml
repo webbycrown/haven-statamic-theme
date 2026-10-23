@@ -1,0 +1,5 @@
+title: Newsletter
+email:
+  -
+    to: admin@example.com
+    html: emails/newsletter

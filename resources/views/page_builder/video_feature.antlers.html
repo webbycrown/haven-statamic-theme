@@ -1,0 +1,23 @@
+<section class="jw_video_section">
+	<div class="jw_container">
+		<div class="jw_video_content">
+			{{ if heading }}<h4 data-aos="fade-up" data-aos-duration="1000">{{ heading }}</h4>{{ /if }}
+			{{ if text }}<p data-aos="fade-up" data-aos-duration="1000">{{ text }}</p>{{ /if }}
+		</div>
+		{{ if image }}
+		<div class="jw_video_wrap" data-aos="fade-up" data-aos-duration="1000">
+			<div class="jw_video_images jw_images_cover content__item">
+				<img class="content__item-img" src="{{ partial:partials/media-url :file="image" }}" alt="">
+				<div class="content__item-title"></div>
+				{{ if video_url }}
+				<div class="jw_video_play_btn_border">
+					<div class="jw_video_play_btn">
+						<a class="popup-vimeo" href="{{ video_url }}" aria-label="Play video"><i class="fa-solid fa-play" aria-hidden="true"></i></a>
+					</div>
+				</div>
+				{{ /if }}
+			</div>
+		</div>
+		{{ /if }}
+	</div>
+</section>

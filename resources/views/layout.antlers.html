@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ site:short_locale ?? 'en' }}">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="csrf-token" content="{{ csrf_token }}">
+	{{ partial:partials/seo-meta }}
+	<link rel="icon" href="{{ partial:partials/media-url :file="setting:favicon" fallback="image/haven-mark.png" }}" type="image/png">
+	<link rel="stylesheet" href="/assets/css/aos.css">
+	<link rel="stylesheet" href="/assets/css/all.min.css">
+	<link rel="stylesheet" href="/assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
+	<link rel="preload" href="/assets/font/Sora-Regular.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/assets/font/ErotiqueAlternateTrial-Bold.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/assets/font/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/assets/font/MaterialSymbolsSharp.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="/assets/css/style.css?v=19">
+	<script src="/assets/js/jquery.min.js?v=3.7.1"></script>
+	<script src="/assets/js/waypoints.min.js?v=4.0.0"></script>
+	<script src="/assets/js/aos.js"></script>
+	<script src="/assets/js/all.min.js"></script>
+	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="/assets/js/swiper-bundle.min.js"></script>
+</head>
+<body>
+	<div class="overlay"></div>
+	{{ partial:partials/search }}
+	{{ partial:partials/mini-cart }}
+	{{ partial:partials/menubar }}
+	{{ partial:partials/header }}
+	<div class="jw_main_body">
+		<div data-scroll class="page">
+			<main>
+				<div class="jw_content">
+					{{ template_content }}
+				</div>
+			</main>
+		</div>
+	</div>
+	{{ partial:partials/footer }}
+	<div class="cursor">
+		<div class="cursor__inner cursor__inner--circle"></div>
+		<div class="cursor__inner cursor__inner--dot"><span></span></div>
+	</div>
+	<script src="/assets/js/jquery.ripples-min.js"></script>
+	<script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+	<script src="/assets/js/scroll-zoom.js?v=3"></script>
+	<script src="/assets/js/custom.js?v=5"></script>
+	<script src="/assets/js/theme-forms.js?v=1"></script>
+</body>
+</html>

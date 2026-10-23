@@ -1,0 +1,21 @@
+<section class="jw_shop_stores_section jw_industry_choices">
+    <div class="jw_container">
+        <div class="jw_shop_stores_content">
+            {{ if heading }}<h3 class="jw_sub_title_2">{{ heading }}</h3>{{ /if }}
+            {{ if text }}<p>{{ text }}</p>{{ /if }}
+        </div>
+        <div class="jw_industry_grid">
+            {{ industries }}
+            <article class="jw_shop_stores_card_box jw_industry_card{{ if slug == setting:industry }} is-current{{ /if }}">
+                <a class="jw_shop_stores_images jw_images_cover" href="/industry/{{ slug }}">
+                    <img src="{{ partial:partials/media-url :file="image" }}" alt="{{ label }}">
+                </a>
+                <div class="jw_shop_stores_card_box_content">
+                    <h5><a href="/industry/{{ slug }}">{{ label }}</a></h5>
+                    {{ if slug == setting:industry }}<span class="jw_industry_current">Showing now</span>{{ /if }}
+                </div>
+            </article>
+            {{ /industries }}
+        </div>
+    </div>
+</section>

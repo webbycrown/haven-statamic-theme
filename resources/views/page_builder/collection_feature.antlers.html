@@ -1,0 +1,16 @@
+<section class="jw_collection_section">
+	<div class="jw_container">
+		<div class="jw_collection_content">
+			{{ if heading }}<h3 class="jw_sub_title_2" data-aos="fade-right" data-aos-duration="1000">{{ heading }}</h3>{{ /if }}
+			{{ if text }}<p data-aos="fade-right" data-aos-duration="1000">{{ text }}</p>{{ /if }}
+		</div>
+		<div class="jw_collection_wrap">
+			{{ images }}
+			<div class="jw_collection_images jw_images_cover content__item" data-aos="zoom-in" data-aos-duration="1000">
+				<img class="content__item-img" src="{{ partial:partials/media-url :file="image" }}" alt="{{ label }}">
+				<div class="content__item-title"></div>
+			</div>
+			{{ /images }}
+		</div>
+	</div>
+</section>

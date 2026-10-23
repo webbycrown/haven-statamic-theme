@@ -1,0 +1,13 @@
+{
+    "name": "webbycrown/haven-statamic-theme",
+    "type": "statamic-starter-kit",
+    "description": "Haven — lifestyle commerce starter kit for apparel, furniture, jewellery, and home brands.",
+    "require": {
+        "statamic/cms": "^5.0"
+    },
+    "extra": {
+        "statamic": {
+            "starter-kit": true
+        }
+    }
+}

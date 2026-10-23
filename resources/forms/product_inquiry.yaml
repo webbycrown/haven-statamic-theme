@@ -1,0 +1,5 @@
+title: Product inquiry
+email:
+  -
+    to: admin@example.com
+    html: emails/product_inquiry

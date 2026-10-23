@@ -1,0 +1,11 @@
+tree:
+  -
+    entry: home
+  -
+    entry: shop
+  -
+    entry: about
+  -
+    entry: blog
+  -
+    entry: contact

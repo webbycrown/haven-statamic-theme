@@ -1,0 +1,9 @@
+tree:
+  -
+    entry: shop
+  -
+    entry: about
+  -
+    entry: blog
+  -
+    entry: contact

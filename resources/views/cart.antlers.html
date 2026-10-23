@@ -1,0 +1,75 @@
+<section class="jw_cart_page_section">
+	<div class="jw_container">
+		<div class="jw_cart_page_title">
+			<h3 class="jw_sub_title_2">View Cart</h3>
+		</div>
+		<div class="jw_cart_page_wrap">
+			{{ if haven_cart_count > 0 }}
+			<form method="POST" action="/cart/update">
+				<input type="hidden" name="_token" value="{{ csrf_token }}">
+				<div class="jw_table_wrap">
+					<div class="jw_table_body">
+						{{ haven_cart }}
+						<div class="jw_table_row">
+							<div data-label="Product images" class="jw_table_col">
+								<div class="jw_product_img jw_images_cover">
+									<img src="{{ image }}" alt="">
+								</div>
+							</div>
+							<div data-label="name" class="jw_table_col">
+								<div class="jw_product_name">
+									<h4><a href="{{ url }}">{{ title }}</a></h4>
+								</div>
+							</div>
+							<div data-label="price" class="jw_table_col">
+								<div class="jw_product_price"><p>{{ price_label }}</p></div>
+							</div>
+							<div data-label="quantity" class="jw_table_col">
+								<div class="jw_quantity"><span class="minus">-</span><input type="text" name="qty[{{ line_id }}]" value="{{ qty }}"><span class="plus">+</span></div>
+							</div>
+							<div data-label="remove" class="jw_table_col">
+								<button type="submit" class="jw_remove_cart" formaction="/cart/remove" name="id" value="{{ line_id }}" aria-label="Remove {{ title }}">
+									<span class="material-symbols-sharp" aria-hidden="true">close</span>
+								</button>
+							</div>
+						</div>
+						{{ /haven_cart }}
+					</div>
+					<div class="jw_table_foot">
+						<div class="jw_table_row">
+							<div class="jw_table_col jw_table_colspan_3">
+								<button type="submit" class="jw_custom_buttom"><span>Update cart</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<div class="jw_payment_wrap">
+				<div class="jw_payment_col">
+					<div class="jw_payment_subtotal">
+						<h6>Subtotal</h6>
+						<p>{{ haven_cart_subtotal }}</p>
+					</div>
+					<div class="jw_payment_shipping_detail">
+						<ul>
+							<li><p><span>Shipping:</span> <span>Quoted with your inquiry</span></p></li>
+						</ul>
+					</div>
+					<div class="jw_payment_total">
+						<h6>Total</h6>
+						<p>{{ haven_cart_subtotal }}</p>
+					</div>
+					<a class="jw_custom_buttom" href="/checkout"><span>Checkout</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+				</div>
+			</div>
+			{{ else }}
+			<div class="jw_payment_wrap">
+				<div class="jw_payment_col">
+					<p>Your cart is empty.</p>
+					<a class="jw_custom_buttom" href="/shop"><span>Browse the shop</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+				</div>
+			</div>
+			{{ /if }}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,93 @@
+title: Setting
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: site_name
+            field: { type: text, display: 'Site name' }
+          -
+            handle: industry
+            field:
+              type: select
+              display: Industry
+              options:
+                apparel: Apparel
+                furniture: Furniture
+                jewellery: Jewellery
+                home: Home
+              default: apparel
+          -
+            handle: industry_label
+            field: { type: text, display: 'Industry label' }
+          -
+            handle: logo
+            field: { type: assets, container: assets, max_files: 1, display: Logo }
+          -
+            handle: footer_logo
+            field: { type: assets, container: assets, max_files: 1, display: 'Footer logo' }
+          -
+            handle: favicon
+            field: { type: assets, container: assets, max_files: 1, display: Favicon }
+          -
+            handle: menu_image
+            field: { type: assets, container: assets, max_files: 1, display: 'Menu image' }
+          -
+            handle: phone
+            field: { type: text, display: Phone }
+          -
+            handle: email
+            field: { type: text, display: Email }
+          -
+            handle: address
+            field: { type: textarea, display: Address }
+          -
+            handle: copyright
+            field: { type: text, display: Copyright }
+          -
+            handle: currency_symbol
+            field: { type: text, display: 'Currency symbol', default: '$' }
+          -
+            handle: inquiry_note
+            field: { type: textarea, display: 'Inquiry note' }
+          -
+            handle: cart_button
+            field: { type: text, display: 'Cart inquiry button' }
+          -
+            handle: product_button
+            field: { type: text, display: 'Product inquiry button' }
+          -
+            handle: product_success
+            field: { type: text, display: 'Product inquiry success' }
+          -
+            handle: facebook_url
+            field: { type: text, display: Facebook }
+          -
+            handle: instagram_url
+            field: { type: text, display: Instagram }
+          -
+            handle: twitter_url
+            field: { type: text, display: Twitter }
+          -
+            handle: contact_button
+            field: { type: text, display: 'Contact button' }
+          -
+            handle: contact_success
+            field: { type: text, display: 'Contact success' }
+          -
+            handle: newsletter_button
+            field: { type: text, display: 'Newsletter button' }
+          -
+            handle: newsletter_success
+            field: { type: text, display: 'Newsletter success' }
+          -
+            handle: add_to_cart_label
+            field: { type: text, display: 'Add to cart label' }
+          -
+            handle: related_heading
+            field: { type: text, display: 'Related pieces heading' }
+          -
+            handle: seo_description
+            field: { type: textarea, display: 'Default SEO description' }

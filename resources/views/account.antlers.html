@@ -1,0 +1,23 @@
+<section class="jw_account_page_section">
+	<div class="jw_container">
+		<div class="jw_account_page_title">
+			<h3 class="jw_sub_title_2">{{ title ?? 'Account' }}</h3>
+		</div>
+		<div class="jw_account_tab_content">
+			<div class="tab-content current">
+				<div class="jw_dashboard">
+					<p>There is no customer account on this shop. Orders, downloads, saved cards, and logins are not included.</p>
+					<p>You can <a href="/cart">open your cart</a>, <a href="/checkout">send an inquiry</a>, or <a href="/contact">write to the studio</a>.</p>
+					{{ if setting:address }}
+					<div class="jw_address_order">
+						<div class="jw_address_order_box">
+							<strong>Studio</strong>
+							<p>{{ setting:address | nl2br }}</p>
+						</div>
+					</div>
+					{{ /if }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

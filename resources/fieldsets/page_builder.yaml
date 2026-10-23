@@ -1,0 +1,255 @@
+title: 'Theme sections'
+fields:
+  -
+    handle: page_builder
+    field:
+      type: replicator
+      display: 'Theme sections'
+      collapse: true
+      sets:
+        content:
+          display: Content
+          sets:
+            home_hero:
+              display: 'Home hero'
+              fields:
+                -
+                  handle: slides
+                  field:
+                    type: grid
+                    display: Slides
+                    fields:
+                      -
+                        handle: image
+                        field:
+                          type: assets
+                          container: assets
+                          max_files: 1
+                          display: Image
+                      -
+                        handle: title
+                        field:
+                          type: text
+                          display: Title
+                      -
+                        handle: kicker
+                        field:
+                          type: text
+                          display: Kicker
+            about_intro:
+              display: 'About intro'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: image
+                  field: { type: assets, container: assets, max_files: 1, display: Image }
+                -
+                  handle: button_label
+                  field: { type: text, display: 'Button label' }
+                -
+                  handle: button_url
+                  field: { type: link, display: 'Button URL', collections: [pages] }
+            about_page:
+              display: 'About page'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: paragraphs
+                  field:
+                    type: grid
+                    display: Paragraphs
+                    fields:
+                      -
+                        handle: text
+                        field: { type: textarea, display: Text }
+                -
+                  handle: image
+                  field: { type: assets, container: assets, max_files: 1, display: Image }
+                -
+                  handle: lead
+                  field: { type: textarea, display: Lead }
+                -
+                  handle: points
+                  field:
+                    type: grid
+                    display: Points
+                    fields:
+                      -
+                        handle: text
+                        field: { type: textarea, display: Text }
+                -
+                  handle: image_two
+                  field: { type: assets, container: assets, max_files: 1, display: 'Second image' }
+                -
+                  handle: year
+                  field: { type: text, display: Year }
+                -
+                  handle: year_label
+                  field: { type: text, display: 'Year label' }
+                -
+                  handle: notes
+                  field:
+                    type: grid
+                    display: Notes
+                    fields:
+                      -
+                        handle: text
+                        field: { type: textarea, display: Text }
+            collection_feature:
+              display: 'Collection feature'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: images
+                  field:
+                    type: grid
+                    display: Images
+                    fields:
+                      -
+                        handle: image
+                        field: { type: assets, container: assets, max_files: 1, display: Image }
+                      -
+                        handle: label
+                        field: { type: text, display: Label }
+            explore_slider:
+              display: 'Explore slider'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: slides
+                  field:
+                    type: grid
+                    display: Slides
+                    fields:
+                      -
+                        handle: image
+                        field: { type: assets, container: assets, max_files: 1, display: Image }
+            video_feature:
+              display: 'Video feature'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: image
+                  field: { type: assets, container: assets, max_files: 1, display: Image }
+                -
+                  handle: video_url
+                  field: { type: text, display: 'Video URL' }
+            newsletter:
+              display: Newsletter
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: placeholder
+                  field: { type: text, display: Placeholder }
+            contact_form:
+              display: 'Contact form'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+            heading_banner:
+              display: 'Heading banner'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+            legal_copy:
+              display: 'Legal copy'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: body
+                  field: { type: textarea, display: Body }
+        listings:
+          display: Listings
+          sets:
+            shop_products:
+              display: 'Shop products'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: style
+                  field:
+                    type: select
+                    display: Style
+                    options:
+                      grid: Grid
+                      page: 'Shop page'
+                      list: List
+                      sidebar: Sidebar
+                    default: grid
+                -
+                  handle: limit
+                  field: { type: integer, display: Limit, default: 8 }
+                -
+                  handle: show_all_label
+                  field: { type: text, display: 'Show all label' }
+                -
+                  handle: show_all_url
+                  field: { type: link, display: 'Show all URL', collections: [pages] }
+            blogs:
+              display: Blogs
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: style
+                  field:
+                    type: select
+                    display: Style
+                    options:
+                      grid: Grid
+                      page: 'Blog page'
+                      masonry: Masonry
+                      classic: Classic
+                    default: grid
+                -
+                  handle: limit
+                  field: { type: integer, display: Limit, default: 3 }
+                -
+                  handle: button_label
+                  field: { type: text, display: 'Read more label' }

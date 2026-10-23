@@ -1,0 +1,39 @@
+<header class="jw_header">
+	<div class="jw_container">
+		<div class="jw_header_contant">
+			<ul class="jw_all_menu_btn jw_all_menu_btn_left">
+				<li class="jw_mobile_menu_icon">
+					<button type="button" class="jw_menu_toggle" aria-label="Open menu" aria-expanded="false" aria-controls="jw-menubar">
+						<span class="material-symbols-outlined" aria-hidden="true">menu</span>
+					</button>
+				</li>
+				<li class="jw_mobile_search_btn">
+					<a href="javascript:;" aria-label="Search">
+						<span class="material-symbols-outlined mobile_search_icon" aria-hidden="true">search</span>
+					</a>
+				</li>
+			</ul>
+			<div class="jw_header_logo_content">
+				<a href="/"><img src="{{ partial:partials/media-url :file="setting:logo" fallback="image/haven-logo.png" }}" alt="{{ setting:site_name ?? 'Haven' }}"></a>
+			</div>
+			<ul class="jw_all_menu_btn jw_all_menu_btn_right">
+				<li class="jw_search_btn">
+					<a href="javascript:;" aria-label="Search">
+						<span class="material-symbols-outlined search_icon" aria-hidden="true">search</span>
+					</a>
+				</li>
+				<li class="jw_accunte_btn">
+					<a href="{{ setting:account_url ?? '/account' }}" aria-label="Account">
+						<span class="material-symbols-outlined" aria-hidden="true">person</span>
+					</a>
+				</li>
+				<li class="jw_cart_btn">
+					<a href="javascript:;" aria-label="Cart ({{ haven_cart_count ?? 0 }})">
+						<span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
+						{{ if haven_cart_count }}<span class="jw_cart_count">{{ haven_cart_count }}</span>{{ /if }}
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>

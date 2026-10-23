@@ -1,0 +1,17 @@
+tree:
+  -
+    entry: home
+  -
+    entry: shop
+  -
+    entry: collection
+  -
+    entry: about
+  -
+    entry: blog
+  -
+    entry: contact
+  -
+    entry: account
+  -
+    entry: login

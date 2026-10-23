@@ -1,0 +1,135 @@
+<section class="jw_single_product_section">
+	<div class="jw_container">
+		<div class="jw_single_product_wrap">
+			<div class="jw_single_product_slider_wrap">
+				<div class="swiper jw_single_product_body mySwiper2">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="jw_images_cover">
+								<img src="{{ partial:partials/media-url :file="image" fallback="image/images-19.jpg" }}" alt="{{ title }}">
+							</div>
+						</div>
+						{{ gallery }}
+						<div class="swiper-slide">
+							<div class="jw_images_cover">
+								<img src="{{ partial:partials/media-url :file="value" fallback="image/images-6.jpg" }}" alt="{{ title }}">
+							</div>
+						</div>
+						{{ /gallery }}
+					</div>
+				</div>
+				<div class="jw_single_product_foot swiper mySwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="jw_images_cover">
+								<img src="{{ partial:partials/media-url :file="image" fallback="image/images-19.jpg" }}" alt="">
+							</div>
+						</div>
+						{{ gallery }}
+						<div class="swiper-slide">
+							<div class="jw_images_cover">
+								<img src="{{ partial:partials/media-url :file="value" }}" alt="">
+							</div>
+						</div>
+						{{ /gallery }}
+					</div>
+				</div>
+			</div>
+			<div class="jw_single_product_detail">
+				<h2 class="jw_sub_title">{{ title }}</h2>
+				{{ if price }}<p class="jw_single_price">{{ setting:currency_symbol ?? '$' }} {{ price }}</p>{{ /if }}
+				{{ if description }}<p class="jw_single_product_desc">{{ description | trim }}</p>{{ /if }}
+				<form method="post" action="/cart/add" class="jw_add_cart_form">
+					{{ csrf_field }}
+					<input type="hidden" name="id" value="{{ id }}">
+					<div class="jw_single_product_Qty">
+						<div class="jw_quantity">
+							<span class="minus">-</span>
+							<input type="text" name="qty" value="1" aria-label="Quantity">
+							<span class="plus">+</span>
+						</div>
+						<button type="submit" class="jw_custom_buttom"><span>{{ setting:add_to_cart_label ?? 'Add to Cart' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="jw_product_parts">
+			<div class="jw_product_part">
+				<h3 class="jw_sub_title_2">Description</h3>
+				{{ if details }}
+					<div class="jw_product_part_body">{{ details | trim | nl2br }}</div>
+				{{ elseif description }}
+					<div class="jw_product_part_body">{{ description | trim | nl2br }}</div>
+				{{ else }}
+					<p>Details for this piece will appear here.</p>
+				{{ /if }}
+			</div>
+			<div class="jw_product_part">
+				<h3 class="jw_sub_title_2">Reviews</h3>
+				{{ if reviews }}
+					{{ reviews }}
+					<article class="jw_review">
+						<p class="jw_review_stars" aria-label="{{ rating }} out of 5">
+							{{ if rating >= 1 }}<span class="material-symbols-sharp jw_review_star" aria-hidden="true">star</span>{{ /if }}
+							{{ if rating >= 2 }}<span class="material-symbols-sharp jw_review_star" aria-hidden="true">star</span>{{ /if }}
+							{{ if rating >= 3 }}<span class="material-symbols-sharp jw_review_star" aria-hidden="true">star</span>{{ /if }}
+							{{ if rating >= 4 }}<span class="material-symbols-sharp jw_review_star" aria-hidden="true">star</span>{{ /if }}
+							{{ if rating >= 5 }}<span class="material-symbols-sharp jw_review_star" aria-hidden="true">star</span>{{ /if }}
+						</p>
+						<h4>{{ name }}</h4>
+						<p>{{ text }}</p>
+					</article>
+					{{ /reviews }}
+				{{ else }}
+					<p>No reviews yet.</p>
+				{{ /if }}
+			</div>
+		</div>
+		<div class="jw_product_inquiry">
+			<div class="jw_product_inquiry_head">
+				<h3 class="jw_sub_title_2">Shipping &amp; inquiry</h3>
+				<p>{{ setting:inquiry_note ?? 'Nothing on this shop is charged. Add the piece to your cart, or send a shipping inquiry below.' }}</p>
+			</div>
+			<div class="jw_contact_form">
+				{{ form:product_inquiry class="js-theme-form" }}
+					<input type="hidden" name="product" value="{{ title }}">
+					<label class="jw_sr_only" for="pi-email">Email</label>
+					<input id="pi-email" type="email" name="email" placeholder="Email" required>
+					<label class="jw_sr_only" for="pi-message">Message</label>
+					<textarea id="pi-message" name="message" placeholder="Message" required></textarea>
+					<button type="submit" class="jw_custom_buttom"><span>{{ setting:product_button ?? 'Send inquiry' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></button>
+					<div class="stay-connect-alert" role="alert"></div>
+					<div class="stay-connect-success">{{ setting:product_success ?? 'Thanks — we will reply about this piece.' }}</div>
+				{{ /form:product_inquiry }}
+			</div>
+		</div>
+	</div>
+</section>
+<section class="jw_releted_product_section">
+	<div class="jw_container">
+		<div class="jw_releted_product_wrap">
+			<div class="jw_releted_product_title">
+				<h3 class="jw_sub_title_2">{{ setting:related_heading ?? 'You may also like' }}</h3>
+			</div>
+			<div class="jw_shop_stores_wrap">
+				<div class="swiper mySwiper">
+					<div class="swiper-wrapper">
+						{{ collection:products id:isnt="{id}" limit="6" }}
+						<div class="swiper-slide">
+							<div class="jw_shop_stores_card_box jw_data_title" data-title="{{ title }}">
+								<a href="{{ url }}" class="jw_shop_stores_images jw_images_cover">
+									<img src="{{ partial:partials/media-url :file="image" fallback="image/images-19.jpg" }}" alt="{{ title }}">
+								</a>
+								<div class="jw_shop_stores_card_box_content">
+									<h5><a href="{{ url }}">{{ title }}</a></h5>
+									{{ if price }}<p>{{ setting:currency_symbol ?? '$' }} {{ price }}</p>{{ /if }}
+								</div>
+							</div>
+						</div>
+						{{ /collection:products }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

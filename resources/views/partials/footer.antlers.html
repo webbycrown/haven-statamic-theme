@@ -1,0 +1,31 @@
+<footer class="jw_footer">
+	<div class="jw_container">
+		<div class="jw_footer_wrap">
+			<div class="jw_footer_logo_content">
+				<a href="/"><img src="{{ partial:partials/media-url :file="setting:footer_logo" fallback="image/haven-footer-logo.png" }}" alt="{{ setting:site_name ?? 'Haven' }}"></a>
+			</div>
+			<div class="jw_footer_contact_wrap">
+				<ul>
+					{{ nav:footer_menu }}
+					<li><a href="{{ url }}">{{ title }}</a></li>
+					{{ /nav:footer_menu }}
+				</ul>
+				<ul class="jw_footer_contact_meta">
+					{{ if setting:phone }}<li><a href="tel:{{ setting:phone | replace:' ','' }}">{{ setting:phone }}</a></li>{{ /if }}
+					{{ if setting:email }}<li><a href="mailto:{{ setting:email }}">{{ setting:email }}</a></li>{{ /if }}
+					{{ if setting:address }}<li>{{ setting:address }}</li>{{ /if }}
+				</ul>
+			</div>
+		</div>
+		<div class="jw_copy_right_content">
+			<p>{{ setting:copyright ?? '© Haven. All rights reserved.' }}</p>
+			<div class="jw_social_icon">
+				<ul>
+					{{ if setting:facebook_url }}<li><a href="{{ setting:facebook_url }}" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>{{ /if }}
+					{{ if setting:instagram_url }}<li><a href="{{ setting:instagram_url }}" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>{{ /if }}
+					{{ if setting:twitter_url }}<li><a href="{{ setting:twitter_url }}" aria-label="X"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a></li>{{ /if }}
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>

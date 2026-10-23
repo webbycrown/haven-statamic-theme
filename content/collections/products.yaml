@@ -1,0 +1,4 @@
+title: Products
+template: products/show
+route: '/products/{slug}'
+sort_dir: asc

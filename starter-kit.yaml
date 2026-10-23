@@ -1,0 +1,17 @@
+title: Haven Theme
+user: webbycrown
+repo: webbycrown/haven-statamic-theme
+export_paths:
+  - content
+  - app/Http
+  - app/Services
+  - app/Support
+  - app/Providers/HavenServiceProvider.php
+  - app/Console
+  - resources/blueprints
+  - resources/fieldsets
+  - resources/forms
+  - resources/views
+  - public/assets
+  - README.md
+  - THIRD_PARTY.md

@@ -1,0 +1,25 @@
+<section class="jw_collection_hero_section">
+	<div class="jw_container">
+		<div class="jw_collection_hero_wrap">
+			<div class="jw_collection_hero_title">
+				<h2 class="jw_sub_title">{{ title }}</h2>
+				<p>Pieces from the current collection. Open one to read the notes and send an inquiry.</p>
+			</div>
+			<div class="jw_shop_stores_wrap">
+				{{ collection:products sort="title" }}
+				<div class="jw_shop_stores_card_box jw_data_title" data-title="{{ title }}">
+					<div class="jw_shop_stores_images jw_images_cover">
+						<a href="{{ url }}">
+							<img src="{{ partial:partials/media-url :file="image" fallback="image/images-19.jpg" }}" alt="{{ title }}">
+						</a>
+					</div>
+					<div class="jw_shop_stores_card_box_content">
+						<h5><a href="{{ url }}">{{ title }}</a></h5>
+						<p>$ {{ price }}</p>
+					</div>
+				</div>
+				{{ /collection:products }}
+			</div>
+		</div>
+	</div>
+</section>

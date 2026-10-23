@@ -1,0 +1,5 @@
+title: Blogs
+template: blogs/show
+route: '/blog/{slug}'
+date: true
+sort_dir: desc
