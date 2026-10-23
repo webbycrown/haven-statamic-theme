@@ -33,7 +33,10 @@ App\Providers\HavenServiceProvider::class,
 | Page | URL | Notes |
 |---|---|---|
 | Home | `/` | page_builder |
+| Lookbook | `/home-two` | second home from the HTML index-two layout |
 | Shop | `/shop` | page_builder + shop_products |
+| Shop now | `/shop-now` | shop cards from shop_v2 |
+| Shop gallery | `/shop-masonry` | masonry shop from shop_v3 |
 | Search | `/search` | pieces and journal notes |
 | Product detail | `/products/{slug}` | `products/show` |
 | Category | `/categories/{slug}` | `category` |
@@ -41,6 +44,8 @@ App\Providers\HavenServiceProvider::class,
 | Cart | `/cart` | session cart |
 | Checkout | `/checkout` | cart inquiry, no card charge |
 | Blog | `/blog` | page_builder + blogs |
+| Journal grid | `/blog-grid` | card grid |
+| Journal masonry | `/blog-masonry` | masonry journal |
 | Blog detail | `/blog/{slug}` | `blogs/show` |
 | About | `/about` | page_builder |
 | Contact | `/contact` | page_builder + contact_form |
@@ -52,7 +57,7 @@ App\Providers\HavenServiceProvider::class,
 
 ## Theme sections (page_builder)
 
-`home_hero`, `about_intro`, `collection_feature`, `explore_slider`, `video_feature`, `shop_products` (grid / list / sidebar), `newsletter`, `blogs` (grid / masonry / classic), `contact_form`, `heading_banner`, `legal_copy`
+`home_hero`, `home_hero_two`, `about_intro`, `collection_feature`, `explore_slider`, `explore_tiles`, `features`, `best_collection`, `video_feature`, `video_story`, `shop_products` (grid / shop page / shop now / masonry / featured), `newsletter`, `blogs` (grid / blog page / card grid / masonry / latest slider), `contact_form`, `heading_banner`, `legal_copy`
 
 ---
 
@@ -122,12 +127,18 @@ This kit does not export `routes/`. Your `routes/web.php` stays as it is. `Haven
 Optional HTML redirects, only if old template filenames still get traffic. New Statamic sites do not need these. Add them to your own `routes/web.php`:
 
 ```php
+Route::redirect('/index-two.html', '/home-two');
+Route::redirect('/shop_v1.html', '/shop');
+Route::redirect('/shop_v2.html', '/shop-now');
+Route::redirect('/shop_v3.html', '/shop-masonry');
 Route::redirect('/index.html', '/');
 Route::redirect('/shop.html', '/shop');
 Route::redirect('/single-product.html', '/shop');
 Route::redirect('/about.html', '/about');
 Route::redirect('/contact.html', '/contact');
 Route::redirect('/blog.html', '/blog');
+Route::redirect('/blog-grid.html', '/blog-grid');
+Route::redirect('/blogs-masonary.html', '/blog-masonry');
 Route::redirect('/blog-detail.html', '/blog');
 Route::redirect('/cart.html', '/cart');
 Route::redirect('/checkout.html', '/checkout');

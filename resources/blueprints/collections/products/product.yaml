@@ -21,6 +21,36 @@ tabs:
             handle: details
             field: { type: textarea, display: 'Full description' }
           -
+            handle: gallery
+            field:
+              type: assets
+              container: assets
+              display: Gallery
+              instructions: 'Extra photos after the main image.'
+          -
+            handle: product_options
+            field:
+              type: grid
+              display: Options
+              instructions: 'Size, color, or material choices. Shown on the product page and stored with the cart line.'
+              fields:
+                -
+                  handle: handle
+                  field:
+                    type: select
+                    display: Kind
+                    options:
+                      size: Size
+                      color: Color
+                      material: Material
+                      length: Length
+                -
+                  handle: label
+                  field: { type: text, display: Label }
+                -
+                  handle: values
+                  field: { type: list, display: Values }
+          -
             handle: reviews
             field:
               type: grid

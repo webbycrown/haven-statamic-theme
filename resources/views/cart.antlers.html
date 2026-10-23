@@ -19,6 +19,7 @@
 							<div data-label="name" class="jw_table_col">
 								<div class="jw_product_name">
 									<h4><a href="{{ url }}">{{ title }}</a></h4>
+									{{ if options_label }}<p>{{ options_label }}</p>{{ /if }}
 								</div>
 							</div>
 							<div data-label="price" class="jw_table_col">
@@ -52,7 +53,7 @@
 					</div>
 					<div class="jw_payment_shipping_detail">
 						<ul>
-							<li><p><span>Shipping:</span> <span>Quoted with your inquiry</span></p></li>
+							<li><p><span>Shipping:</span> <span>{{ setting:shipping_note ?? 'Quoted with your inquiry' }}</span></p></li>
 						</ul>
 					</div>
 					<div class="jw_payment_total">

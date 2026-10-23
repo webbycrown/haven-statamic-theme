@@ -73,11 +73,21 @@ page_builder:
     text: Add a piece to your cart, then send an inquiry. This shop does not charge a card.
     style: grid
     limit: 4
+    show_all_label: Browse the shop
+    show_all_url: 'entry::shop'
   -
     id: news1
     type: newsletter
     heading: Want some news?
     placeholder: Email
+    image_left: image/images-12.jpg
+    image_left_title: Studio light
+    image_right: image/images-13.jpg
+    image_right_title: Cloth
+    image_bottom_left: image/images-14.jpg
+    image_bottom_left_title: Table
+    image_bottom_right: image/images-16.jpg
+    image_bottom_right_title: Notes
   -
     id: blogs1
     type: blogs

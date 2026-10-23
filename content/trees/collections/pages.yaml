@@ -2,13 +2,23 @@ tree:
   -
     entry: home
   -
+    entry: home-two
+  -
     entry: shop
+  -
+    entry: shop-now
+  -
+    entry: shop-masonry
   -
     entry: collection
   -
     entry: about
   -
     entry: blog
+  -
+    entry: blog-grid
+  -
+    entry: blog-masonry
   -
     entry: contact
   -

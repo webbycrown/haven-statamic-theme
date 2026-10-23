@@ -5016,3 +5016,15 @@ button.jw_dropdown_click:focus-visible {
     outline-offset: 3px;
 }
 
+.jw_product_option {
+    margin: 0 0 18px;
+}
+.jw_product_option label {
+    display: block;
+    margin-bottom: 8px;
+}
+.jw_product_option select.jw_custom_input {
+    width: 100%;
+    max-width: 240px;
+}
+

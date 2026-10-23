@@ -1,12 +1,13 @@
-<section class="{{ if style == 'page' }}jw_shop_stores_page_section{{ else }}jw_shop_stores_section{{ /if }}">
+{{ if style == "page" }}
+<section class="jw_shop_stores_page_section">
 	<div class="jw_container">
-		{{ if style == "page" }}
 		<div class="jw_shop_stores_page_title">
 			<h2 class="jw_sub_title" data-aos="fade-right" data-aos-duration="1000">{{ heading ?? 'Shop Stores' }}</h2>
 			{{ if text }}<p data-aos="fade-right" data-aos-duration="1000">{{ text }}</p>{{ /if }}
 		</div>
 		<div class="jw_shop_stores_page_wrap">
-			{{ collection:products limit="{limit ?? 12}" sort="order:asc" }}
+			{{ collection:products paginate="{limit ?? 12}" sort="order:asc" as="pieces" }}
+			{{ pieces }}
 			<div class="jw_shop_stores_card_box">
 				<a href="{{ url }}" class="jw_shop_stores_images jw_images_cover">
 					<img src="{{ partial:partials/media-url :file="image" fallback="image/images-19.jpg" }}" alt="{{ title }}">
@@ -16,37 +17,114 @@
 					{{ if price }}<p>{{ setting:currency_symbol ?? '$' }} {{ price }}</p>{{ /if }}
 				</div>
 			</div>
+			{{ /pieces }}
+			{{ paginate }}{{ partial:partials/pagination }}{{ /paginate }}
 			{{ /collection:products }}
 		</div>
-		{{ else }}
-		<div class="jw_slider_arrow_wrap">
-			<div class="jw_shop_stores_content">
-				{{ if heading }}<h3 class="jw_sub_title_2" data-aos="fade-right" data-aos-duration="1000">{{ heading }}</h3>{{ else }}<h3 class="jw_sub_title_2" data-aos="fade-right" data-aos-duration="1000">Shop Stores</h3>{{ /if }}
-				{{ if text }}<p data-aos="fade-right" data-aos-duration="1000">{{ text }}</p>{{ /if }}
-			</div>
-			{{ if style != "list" and style != "sidebar" }}
-			<div class="jw_shop_stores_slider_arrow">
-				<div class="swiper-button-prev" data-aos="zoom-in" data-aos-duration="1000"><span class="material-symbols-sharp" aria-hidden="true">arrow_back_ios</span></div>
-				<div class="swiper-button-next" data-aos="zoom-in" data-aos-duration="1000"><span class="material-symbols-sharp" aria-hidden="true">arrow_forward_ios</span></div>
-			</div>
-			{{ /if }}
+		{{ partial:partials/show-all }}
+	</div>
+</section>
+{{ elseif style == "list" }}
+<section class="jw_shop_now_page_section item">
+	<div class="jw_container">
+		<div class="jw_shop_now_page_title">
+			<h2 class="jw_sub_title" data-aos="fade-right" data-aos-duration="1000">{{ heading ?? 'Shop Now' }}</h2>
+			{{ if text }}<p data-aos="fade-right" data-aos-duration="1000">{{ text }}</p>{{ /if }}
 		</div>
-		<div class="jw_shop_stores_wrap" data-aos="fade-up" data-aos-duration="1000">
-			{{ if style == "list" or style == "sidebar" }}
-			<div class="jw_shop_grid jw_shop_style_{{ style }}">
-				{{ collection:products limit="{limit ?? 8}" sort="order:asc" }}
-				<div class="jw_shop_stores_card_box">
-					<a href="{{ url }}" class="jw_shop_stores_images jw_images_cover">
-						<img src="{{ partial:partials/media-url :file="image" fallback="image/images-19.jpg" }}" alt="{{ title }}">
-					</a>
+		<div class="jw_shop_now_page_wrap">
+			{{ collection:products paginate="{limit ?? 9}" sort="order:asc" as="pieces" }}
+			{{ pieces }}
+			<div class="jw_shop_now_card_box">
+				<div class="jw_shop_now_images jw_images_cover">
+					<a href="{{ url }}"><img src="{{ partial:partials/media-url :file="image" fallback="image/images-19.jpg" }}" alt="{{ title }}"></a>
 					<div class="jw_shop_stores_card_box_content">
 						<h5><a href="{{ url }}">{{ title }}</a></h5>
 						{{ if price }}<p>{{ setting:currency_symbol ?? '$' }} {{ price }}</p>{{ /if }}
 					</div>
 				</div>
-				{{ /collection:products }}
 			</div>
-			{{ else }}
+			{{ /pieces }}
+			{{ paginate }}{{ partial:partials/pagination }}{{ /paginate }}
+			{{ /collection:products }}
+		</div>
+		{{ partial:partials/show-all }}
+	</div>
+</section>
+{{ elseif style == "masonry" or style == "sidebar" }}
+<section class="jw_shop_messonary_page_section item">
+	<div class="jw_container">
+		<div class="jw_shop_messonary_page_title">
+			<h2 class="jw_sub_title" data-aos="fade-right" data-aos-duration="1000">{{ heading ?? 'Shop Now' }}</h2>
+			{{ if text }}<p data-aos="fade-right" data-aos-duration="1000">{{ text }}</p>{{ /if }}
+		</div>
+		<div class="jw_shop_messonary_page_wrap">
+			{{ collection:products paginate="{limit ?? 6}" sort="order:asc" as="pieces" }}
+			{{ pieces }}
+			<div class="jw_shop_messonary_card_box{{ if (index | mod:6) == 0 or (index | mod:6) == 3 or (index | mod:6) == 4 }} grid-span{{ /if }}">
+				<div class="jw_shop_messonary_images jw_images_cover">
+					<a href="{{ url }}"><img src="{{ partial:partials/media-url :file="image" fallback="image/images-19.jpg" }}" alt="{{ title }}"></a>
+					<div class="jw_shop_messonary_card_box_content">
+						<h5><a href="{{ url }}">{{ title }}</a></h5>
+						{{ if price }}<p>{{ setting:currency_symbol ?? '$' }} {{ price }}</p>{{ /if }}
+					</div>
+				</div>
+			</div>
+			{{ /pieces }}
+			{{ paginate }}{{ partial:partials/pagination }}{{ /paginate }}
+			{{ /collection:products }}
+		</div>
+		{{ partial:partials/show-all }}
+	</div>
+</section>
+{{ elseif style == "featured" }}
+<section class="jw_featured-Product_section">
+	<div class="jw_container">
+		<div class="jw_slider_arrow_wrap">
+			<div class="jw_featured-Product_content">
+				{{ if heading }}<h3 class="jw_sub_title_2" data-aos="fade-right" data-aos-duration="1000">{{ heading }}</h3>{{ /if }}
+				{{ if text }}<p data-aos="fade-right" data-aos-duration="1000">{{ text }}</p>{{ /if }}
+			</div>
+			<div class="jw_featured-Product_slider_arrow">
+				<div class="swiper-button-prev" data-aos="zoom-in" data-aos-duration="1000"><span class="material-symbols-sharp" aria-hidden="true">arrow_back_ios</span></div>
+				<div class="swiper-button-next" data-aos="zoom-in" data-aos-duration="1000"><span class="material-symbols-sharp" aria-hidden="true">arrow_forward_ios</span></div>
+			</div>
+		</div>
+		<div class="jw_featured-Product_wrap" data-aos="fade-up" data-aos-duration="1000">
+			<div class="swiper mySwiper">
+				<div class="swiper-wrapper">
+					{{ collection:products limit="{limit ?? 8}" sort="order:asc" }}
+					<div class="swiper-slide jw_data_title" data-title="{{ title }}">
+						<div class="jw_featured-Product_card_box">
+							<div class="jw_featured-Product_images jw_images_cover">
+								<a href="{{ url }}"><img src="{{ partial:partials/media-url :file="image" fallback="image/images-19.jpg" }}" alt="{{ title }}"></a>
+								<div class="jw_featured-Product_card_box_content">
+									<h5><a href="{{ url }}">{{ title }}</a></h5>
+									{{ if price }}<p>{{ setting:currency_symbol ?? '$' }} {{ price }}</p>{{ /if }}
+								</div>
+							</div>
+						</div>
+					</div>
+					{{ /collection:products }}
+				</div>
+			</div>
+		</div>
+		{{ partial:partials/show-all }}
+	</div>
+</section>
+{{ else }}
+<section class="jw_shop_stores_section">
+	<div class="jw_container">
+		<div class="jw_slider_arrow_wrap">
+			<div class="jw_shop_stores_content">
+				{{ if heading }}<h3 class="jw_sub_title_2" data-aos="fade-right" data-aos-duration="1000">{{ heading }}</h3>{{ else }}<h3 class="jw_sub_title_2" data-aos="fade-right" data-aos-duration="1000">Shop Stores</h3>{{ /if }}
+				{{ if text }}<p data-aos="fade-right" data-aos-duration="1000">{{ text }}</p>{{ /if }}
+			</div>
+			<div class="jw_shop_stores_slider_arrow">
+				<div class="swiper-button-prev" data-aos="zoom-in" data-aos-duration="1000"><span class="material-symbols-sharp" aria-hidden="true">arrow_back_ios</span></div>
+				<div class="swiper-button-next" data-aos="zoom-in" data-aos-duration="1000"><span class="material-symbols-sharp" aria-hidden="true">arrow_forward_ios</span></div>
+			</div>
+		</div>
+		<div class="jw_shop_stores_wrap" data-aos="fade-up" data-aos-duration="1000">
 			<div class="swiper mySwiper">
 				<div class="swiper-wrapper">
 					{{ collection:products limit="{limit ?? 8}" sort="order:asc" }}
@@ -64,8 +142,8 @@
 					{{ /collection:products }}
 				</div>
 			</div>
-			{{ /if }}
 		</div>
-		{{ /if }}
+		{{ partial:partials/show-all }}
 	</div>
 </section>
+{{ /if }}

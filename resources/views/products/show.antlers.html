@@ -12,7 +12,7 @@
 						{{ gallery }}
 						<div class="swiper-slide">
 							<div class="jw_images_cover">
-								<img src="{{ partial:partials/media-url :file="value" fallback="image/images-6.jpg" }}" alt="{{ title }}">
+								<img src="{{ if url }}{{ url }}{{ else }}{{ partial:partials/media-url :file="value" fallback="image/images-6.jpg" }}{{ /if }}" alt="{{ title }}">
 							</div>
 						</div>
 						{{ /gallery }}
@@ -28,7 +28,7 @@
 						{{ gallery }}
 						<div class="swiper-slide">
 							<div class="jw_images_cover">
-								<img src="{{ partial:partials/media-url :file="value" }}" alt="">
+								<img src="{{ if url }}{{ url }}{{ else }}{{ partial:partials/media-url :file="value" }}{{ /if }}" alt="">
 							</div>
 						</div>
 						{{ /gallery }}
@@ -42,6 +42,18 @@
 				<form method="post" action="/cart/add" class="jw_add_cart_form">
 					{{ csrf_field }}
 					<input type="hidden" name="id" value="{{ id }}">
+					{{ product_options }}
+					{{ if values }}
+					<div class="jw_product_option">
+						<label for="opt-{{ handle }}">{{ label ?? handle }}</label>
+						<select id="opt-{{ handle }}" class="jw_custom_input" name="options[{{ handle }}]">
+							{{ values }}
+							<option value="{{ value }}">{{ value }}</option>
+							{{ /values }}
+						</select>
+					</div>
+					{{ /if }}
+					{{ /product_options }}
 					<div class="jw_single_product_Qty">
 						<div class="jw_quantity">
 							<span class="minus">-</span>

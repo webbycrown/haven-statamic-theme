@@ -3,7 +3,7 @@
 		<div class="jw_collection_hero_wrap">
 			<div class="jw_collection_hero_title">
 				<h2 class="jw_sub_title">{{ title }}</h2>
-				<p>Pieces from the current collection. Open one to read the notes and send an inquiry.</p>
+				{{ if intro }}<p>{{ intro }}</p>{{ /if }}
 			</div>
 			<div class="jw_shop_stores_wrap">
 				{{ collection:products sort="title" }}

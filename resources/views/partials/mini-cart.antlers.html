@@ -12,6 +12,7 @@
 				</div>
 				<div>
 					<h5><a href="{{ url }}">{{ title }}</a></h5>
+					{{ if options_label }}<p>{{ options_label }}</p>{{ /if }}
 					<p>{{ qty }} × {{ price_label }}</p>
 				</div>
 				<div>
@@ -29,5 +30,5 @@
 		</div>
 	</div>
 	<a class="jw_custom_buttom" href="/cart"><span>View Cart</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
-	<a class="jw_custom_buttom" href="/cart#inquiry"><span>Send inquiry</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+	<a class="jw_custom_buttom" href="/checkout"><span>Send inquiry</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
 </div>

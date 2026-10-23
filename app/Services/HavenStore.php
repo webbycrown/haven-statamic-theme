@@ -152,7 +152,11 @@ class HavenStore
             'haven_cart' => $items,
             'haven_cart_count' => $this->count(),
             'haven_cart_subtotal' => $this->format($this->subtotal()),
-            'haven_cart_summary' => $items->map(fn ($item) => $item['title'].' x '.$item['qty'].' = '.$item['total_label'])->implode('; '),
+            'haven_cart_summary' => $items->map(function ($item) {
+                $label = trim($item['title'].' '.($item['options_label'] ?? ''));
+
+                return $label.' x '.$item['qty'].' = '.$item['total_label'];
+            })->implode('; '),
             'haven_currency' => $this->currency(),
             'haven_locale' => $this->locale(),
             'haven_locale_label' => self::LOCALES[$this->locale()],

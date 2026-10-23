@@ -1,0 +1,25 @@
+<div class="page-wrap">
+	<div id="home-slider" class="home-slider">
+		<div class="jw_container jw_hero_contents">
+			<div class="jw_home-contain">
+				{{ if title }}<h1 class="jw_title">{{ title }}</h1>{{ /if }}
+				{{ if kicker }}<p class="wrap">{{ kicker }}</p>{{ /if }}
+			</div>
+		</div>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				{{ slides }}
+				<div class="swiper-slide">
+					<div class="swiper-image swiper-right" data-swiper-parallax-y="-20%">
+						<div class="swiper-image-inner swiper-image-left" style="background-image:url('{{ partial:partials/media-url :file="image_left" fallback="image/images-1.jpg" }}')"></div>
+					</div>
+					<div class="swiper-image swiper-left" data-swiper-parallax-y="35%">
+						<div class="swiper-image-inner swiper-image-right" style="background-image:url('{{ partial:partials/media-url :file="image_right" fallback="image/images-2.jpg" }}')"></div>
+					</div>
+				</div>
+				{{ /slides }}
+			</div>
+			<div class="jw_swiper-pagination"></div>
+		</div>
+	</div>
+</div>

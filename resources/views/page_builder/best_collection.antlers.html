@@ -1,0 +1,33 @@
+<section class="jw_best_collection_section">
+	<div class="jw_container-fluid">
+		<div class="jw_best_collection_wrap">
+			<div class="jw_best_collection_col_top">
+				{{ images }}
+				{{ if index < 2 }}
+				<div class="jw_best_collection_images jw_best_collection_images_{{ if (index | mod:2) == 0 }}left{{ else }}right{{ /if }} jw_images_cover jw_data_title content__item" data-title="{{ label }}">
+					<img class="content__item-img" src="{{ partial:partials/media-url :file="image" fallback="image/images-4.jpg" }}" alt="{{ label }}">
+				</div>
+				{{ /if }}
+				{{ /images }}
+			</div>
+			<div class="jw_best_collection_form_content">
+				{{ if heading }}<h2 class="jw_sub_title" data-aos="fade-down" data-aos-duration="1000">{{ heading }}</h2>{{ /if }}
+				{{ if button_label }}
+				{{ button_url }}
+				<a class="jw_custom_buttom jw_explore_button" href="{{ url ?? '/shop' }}"><span>{{ button_label }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+				{{ /button_url }}
+				{{ /if }}
+				{{ if text }}<p>{{ text }}</p>{{ /if }}
+			</div>
+			<div class="jw_best_collection_col_bottom">
+				{{ images }}
+				{{ if index >= 2 }}
+				<div class="jw_best_collection_images jw_best_collection_images_{{ if (index | mod:2) == 0 }}left{{ else }}right{{ /if }} jw_images_cover jw_data_title content__item" data-title="{{ label }}">
+					<img class="content__item-img" src="{{ partial:partials/media-url :file="image" fallback="image/images-8.jpg" }}" alt="{{ label }}">
+				</div>
+				{{ /if }}
+				{{ /images }}
+			</div>
+		</div>
+	</div>
+</section>

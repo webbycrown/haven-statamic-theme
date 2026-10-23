@@ -5,7 +5,9 @@
 				{{ if heading }}<h2 class="jw_sub_title" data-aos="fade-up" data-aos-duration="1000">{{ heading }}</h2>{{ /if }}
 				{{ if text }}<p data-aos="fade-up" data-aos-duration="1000">{{ text }}</p>{{ /if }}
 				{{ if button_label }}
-				<a data-aos="fade-up" data-aos-duration="1000" class="jw_custom_buttom" href="{{ button_url ?? '/about' }}"><span>{{ button_label }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+				{{ button_url }}
+				<a data-aos="fade-up" data-aos-duration="1000" class="jw_custom_buttom" href="{{ url ?? '/about' }}"><span>{{ button_label }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+				{{ /button_url }}
 				{{ /if }}
 			</div>
 			{{ if image }}

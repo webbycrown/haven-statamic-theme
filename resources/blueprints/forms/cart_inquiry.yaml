@@ -22,6 +22,9 @@ fields:
     handle: ship_street
     field: { type: text, display: 'Shipping street' }
   -
+    handle: ship_different
+    field: { type: text, display: 'Ship to a different address' }
+  -
     handle: cart_summary
     field: { type: text, display: 'Cart summary' }
   -

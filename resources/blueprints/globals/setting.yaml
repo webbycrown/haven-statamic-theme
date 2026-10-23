@@ -91,3 +91,21 @@ tabs:
           -
             handle: seo_description
             field: { type: textarea, display: 'Default SEO description' }
+          -
+            handle: shipping_note
+            field: { type: text, display: 'Shipping note' }
+          -
+            handle: cart_success
+            field: { type: text, display: 'Cart inquiry success' }
+          -
+            handle: missing_text
+            field: { type: text, display: 'Missing page text' }
+          -
+            handle: missing_button
+            field: { type: text, display: 'Missing page button' }
+          -
+            handle: search_intro
+            field: { type: text, display: 'Search intro' }
+          -
+            handle: search_empty
+            field: { type: text, display: 'Search empty text' }

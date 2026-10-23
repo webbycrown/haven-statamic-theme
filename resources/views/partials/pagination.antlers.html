@@ -1,0 +1,17 @@
+{{ if total_pages > 1 }}
+<div class="jw_pagination_wrap" data-aos="fade-up" data-aos-duration="1000">
+	<ul>
+		<li class="page-item">
+			{{ if prev_page }}<a href="{{ prev_page }}" aria-label="Previous page"><span class="material-symbols-sharp" aria-hidden="true">chevron_left</span></a>{{ else }}<span class="material-symbols-sharp" aria-hidden="true">chevron_left</span>{{ /if }}
+		</li>
+		{{ links:segments }}
+			{{ if page }}
+			<li class="page-item"><a href="{{ url }}">{{ page }}</a></li>
+			{{ /if }}
+		{{ /links:segments }}
+		<li class="page-item">
+			{{ if next_page }}<a href="{{ next_page }}" aria-label="Next page"><span class="material-symbols-sharp" aria-hidden="true">chevron_right</span></a>{{ else }}<span class="material-symbols-sharp" aria-hidden="true">chevron_right</span>{{ /if }}
+		</li>
+	</ul>
+</div>
+{{ /if }}

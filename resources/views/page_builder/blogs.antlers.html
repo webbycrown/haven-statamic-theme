@@ -33,26 +33,92 @@
 						{{ /if }}
 					</div>
 					{{ /posts }}
-					{{ paginate }}
-					{{ if total_pages > 1 }}
-					<div class="jw_pagination_wrap">
-						<ul>
-							<li class="page-item">
-								{{ if prev_page }}<a href="{{ prev_page }}" aria-label="Previous page"><span class="material-symbols-sharp" aria-hidden="true">chevron_left</span></a>{{ else }}<span class="material-symbols-sharp" aria-hidden="true">chevron_left</span>{{ /if }}
-							</li>
-							{{ links:segments }}
-								{{ if page }}
-								<li class="page-item"><a href="{{ url }}">{{ page }}</a></li>
-								{{ /if }}
-							{{ /links:segments }}
-							<li class="page-item">
-								{{ if next_page }}<a href="{{ next_page }}" aria-label="Next page"><span class="material-symbols-sharp" aria-hidden="true">chevron_right</span></a>{{ else }}<span class="material-symbols-sharp" aria-hidden="true">chevron_right</span>{{ /if }}
-							</li>
-						</ul>
-					</div>
-					{{ /if }}
-					{{ /paginate }}
+					{{ paginate }}{{ partial:partials/pagination }}{{ /paginate }}
 				{{ /collection:blogs }}
+			</div>
+		</div>
+	</div>
+</section>
+{{ elseif style == "classic" }}
+<section class="jw_blog_grid_page_section item">
+	<div class="jw_container">
+		<div class="jw_blog_grid_page_title">
+			<h2 class="jw_sub_title" data-aos="fade-right" data-aos-duration="1000">{{ heading ?? 'Blogs' }}</h2>
+			{{ if text }}<p data-aos="fade-right" data-aos-duration="1000">{{ text }}</p>{{ /if }}
+		</div>
+		<div class="jw_blog_grid_page_wrap">
+			{{ collection:blogs paginate="{limit ?? 6}" sort="date:desc" as="posts" }}
+			{{ posts }}
+			<div class="jw_blog_grid_wrapper">
+				<div class="jw_blog_grid_img">
+					<a href="{{ url }}"><img src="{{ partial:partials/media-url :file="image" fallback="image/images-16.jpg" }}" alt="{{ title }}"></a>
+				</div>
+				{{ if date }}<div class="jw_grid_date"><p>{{ date format="M,j Y" }}</p></div>{{ /if }}
+				<h2><a href="{{ url }}">{{ title }}</a></h2>
+				<a class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+			</div>
+			{{ /posts }}
+			{{ paginate }}{{ partial:partials/pagination }}{{ /paginate }}
+			{{ /collection:blogs }}
+		</div>
+	</div>
+</section>
+{{ elseif style == "masonry" }}
+<section class="jw_blog_masonary_section item">
+	<div class="jw_container">
+		<div class="jw_blog_masonary_title">
+			<h2 class="jw_sub_title" data-aos="fade-right" data-aos-duration="1000">{{ heading ?? 'Blogs' }}</h2>
+			{{ if text }}<p data-aos="fade-right" data-aos-duration="1000">{{ text }}</p>{{ /if }}
+		</div>
+		<div class="jw_blog_masonary_wrap">
+			{{ collection:blogs paginate="{limit ?? 9}" sort="date:desc" as="posts" }}
+			{{ posts }}
+			<div class="jw_blog_masonary_wrapper">
+				<div class="jw_blog_masonary_img">
+					<a href="{{ url }}"><img src="{{ partial:partials/media-url :file="image" fallback="image/images-16.jpg" }}" alt="{{ title }}"></a>
+				</div>
+				{{ if date }}<div class="jw_grid_date"><p>{{ date format="M,j Y" }}</p></div>{{ /if }}
+				<h2><a href="{{ url }}">{{ title }}</a></h2>
+				{{ if excerpt }}<p>{{ excerpt }}</p>{{ /if }}
+				<a class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+			</div>
+			{{ /posts }}
+			{{ paginate }}{{ partial:partials/pagination }}{{ /paginate }}
+			{{ /collection:blogs }}
+		</div>
+	</div>
+</section>
+{{ elseif style == "latest" }}
+<section class="jw_blog_two_section">
+	<div class="jw_container">
+		<div class="jw_slider_arrow_wrap">
+			<div class="jw_blog_two_content">
+				<h3 class="jw_sub_title_2" data-aos="fade-right" data-aos-duration="1000">{{ heading ?? 'Latest notes' }}</h3>
+				{{ if text }}<p data-aos="fade-right" data-aos-duration="1000">{{ text }}</p>{{ /if }}
+			</div>
+			<div class="jw_blog_two_slider_arrow">
+				<div class="swiper-button-prev" data-aos="zoom-in" data-aos-duration="1000"><span class="material-symbols-sharp" aria-hidden="true">arrow_back_ios</span></div>
+				<div class="swiper-button-next" data-aos="zoom-in" data-aos-duration="1000"><span class="material-symbols-sharp" aria-hidden="true">arrow_forward_ios</span></div>
+			</div>
+		</div>
+		<div class="jw_blog_two_wrap" data-aos="fade-up" data-aos-duration="1000">
+			<div class="swiper mySwiper">
+				<div class="swiper-wrapper">
+					{{ collection:blogs limit="{limit ?? 3}" sort="date:desc" }}
+					<div class="swiper-slide">
+						<div class="jw_blog_two_card_box">
+							<div class="jw_blog_two_images jw_images_cover">
+								<a href="{{ url }}"><img src="{{ partial:partials/media-url :file="image" fallback="image/images-16.jpg" }}" alt="{{ title }}"></a>
+							</div>
+							<div class="jw_blog_two_card_box_content">
+								{{ if date }}<p>{{ date format="M,j Y" }}</p>{{ /if }}
+								<h5><a href="{{ url }}">{{ title }}</a></h5>
+								<a class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+							</div>
+						</div>
+					</div>
+					{{ /collection:blogs }}
+				</div>
 			</div>
 		</div>
 	</div>

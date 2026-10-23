@@ -25,7 +25,7 @@
 						<input id="haven-inq-zip" type="text" name="zip" class="jw_custom_input" placeholder="Zip Code">
 						<label class="jw_checkbox">
 							<span class="jw_checkbox__title">Ship to a Different Address</span>
-							<input class="jw_checkbox__input" type="checkbox">
+							<input class="jw_checkbox__input" type="checkbox" name="ship_different" value="yes">
 							<span class="jw_checkbox__checkmark"></span>
 						</label>
 						<div class="jw_checkbox_address_wrap">
@@ -35,7 +35,7 @@
 						<label class="jw_sr_only" for="haven-inq-note">Note</label>
 						<textarea id="haven-inq-note" class="jw_custom_input" name="message" placeholder="Note (optional)"></textarea>
 						<div class="stay-connect-alert"></div>
-						<div class="stay-connect-success">Thank you. The studio has your inquiry.</div>
+						<div class="stay-connect-success">{{ setting:cart_success ?? 'Thank you. The studio has your inquiry.' }}</div>
 					</div>
 				</div>
 				<div class="jw_payment_wrap">
@@ -57,7 +57,7 @@
 								<p>{{ haven_cart_subtotal }}</p>
 							</div>
 							<ul>
-								<li><p><span>Shipping:</span> <span>Quoted with your inquiry</span></p></li>
+								<li><p><span>Shipping:</span> <span>{{ setting:shipping_note ?? 'Quoted with your inquiry' }}</span></p></li>
 							</ul>
 						</div>
 						<div class="jw_payment_total">

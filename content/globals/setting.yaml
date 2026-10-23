@@ -25,4 +25,10 @@ data:
   cart_button: Send inquiry
   product_button: Send inquiry
   product_success: 'Thanks — we will reply about this piece.'
+  shipping_note: Quoted with your inquiry
+  cart_success: Thank you. The studio has your inquiry.
+  missing_text: We are unable to find the page you are looking for
+  missing_button: Return home
+  search_intro: Search pieces and journal notes.
+  search_empty: Nothing matches that search. Try a piece name or a journal title.
   seo_description: Haven is a lifestyle shop for clothing, furniture, jewellery, and goods for the house.

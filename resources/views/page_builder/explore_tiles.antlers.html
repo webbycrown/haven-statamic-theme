@@ -1,0 +1,31 @@
+<section class="jw_explore_more_section">
+	<div class="jw_container">
+		<div class="jw_explore_more_content">
+			{{ if heading }}<h3 class="jw_sub_title_2" data-aos="fade-right">{{ heading }}</h3>{{ /if }}
+			{{ if text }}<p data-aos="fade-right" data-aos-duration="1000">{{ text }}</p>{{ /if }}
+		</div>
+		<div class="jw_explore_more_wrap">
+			{{ tiles }}
+			<div class="jw_explore_more_images jw_images_cover" data-aos="zoom-in" data-aos-duration="1000">
+				<img src="{{ partial:partials/media-url :file="image" fallback="image/images-6.jpg" }}" alt="{{ title }}" class="content__item-img">
+				<div class="content__item-title">
+					<div class="features_title">
+						{{ if kicker }}<h3 class="jw_sub_wrap">{{ kicker }}</h3>{{ /if }}
+						{{ if title }}<h2 class="jw_sub_title_wrap">{{ title }}</h2>{{ /if }}
+					</div>
+					{{ if button_label }}
+					{{ button_url }}
+					<a class="jw_custom_buttom" href="{{ url ?? '/shop' }}"><span>{{ button_label }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+					{{ /button_url }}
+					{{ /if }}
+				</div>
+			</div>
+			{{ /tiles }}
+		</div>
+		{{ if view_more_label }}
+		{{ view_more_url }}
+		<a class="jw_custom_buttom jw_explore_button" href="{{ url ?? '/shop' }}"><span>{{ view_more_label }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+		{{ /view_more_url }}
+		{{ /if }}
+	</div>
+</section>

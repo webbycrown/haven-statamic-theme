@@ -6,7 +6,7 @@
 				{{ if query }}
 					<p>{{ result_count }} {{ if result_count == 1 }}result{{ else }}results{{ /if }} for “{{ query }}”.</p>
 				{{ else }}
-					<p>Search pieces and journal notes.</p>
+					<p>{{ setting:search_intro ?? 'Search pieces and journal notes.' }}</p>
 				{{ /if }}
 				<form class="jw_search_page_form" action="/search" method="get">
 					<label class="jw_sr_only" for="search-page-q">Search</label>
@@ -31,7 +31,7 @@
 				{{ /results }}
 			</div>
 			{{ elseif query }}
-			<p class="jw_search_empty">Nothing matches that search. Try a piece name, a metal, or a journal title.</p>
+			<p class="jw_search_empty">{{ setting:search_empty ?? 'Nothing matches that search. Try a piece name or a journal title.' }}</p>
 			{{ /if }}
 		</div>
 	</div>

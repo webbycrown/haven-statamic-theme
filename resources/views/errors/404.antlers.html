@@ -1,9 +1,9 @@
 <section class="jw_error_page_section">
 	<div class="jw_container">
 		<div class="jw_error_page_wrap">
-			<p class="jw_description">We are unable to find the page you are looking for</p>
+			<p class="jw_description">{{ setting:missing_text ?? 'We are unable to find the page you are looking for' }}</p>
 			<div class="jw_error_btn">
-				<a class="jw_custom_buttom" href="/"><span>Return home</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+				<a class="jw_custom_buttom" href="/"><span>{{ setting:missing_button ?? 'Return home' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
 			</div>
 			<h6>Oops!</h6>
 		</div>

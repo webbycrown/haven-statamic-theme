@@ -156,6 +156,136 @@ fields:
                 -
                   handle: video_url
                   field: { type: text, display: 'Video URL' }
+            home_hero_two:
+              display: 'Home hero two'
+              fields:
+                -
+                  handle: title
+                  field: { type: text, display: Title }
+                -
+                  handle: kicker
+                  field: { type: text, display: Kicker }
+                -
+                  handle: slides
+                  field:
+                    type: grid
+                    display: Slides
+                    fields:
+                      -
+                        handle: image_left
+                        field: { type: assets, container: assets, max_files: 1, display: 'Left image' }
+                      -
+                        handle: image_right
+                        field: { type: assets, container: assets, max_files: 1, display: 'Right image' }
+            features:
+              display: Features
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: slides
+                  field:
+                    type: grid
+                    display: Slides
+                    fields:
+                      -
+                        handle: image
+                        field: { type: assets, container: assets, max_files: 1, display: Image }
+            best_collection:
+              display: 'Best collection'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: button_label
+                  field: { type: text, display: 'Button label' }
+                -
+                  handle: button_url
+                  field: { type: link, display: 'Button URL', collections: [pages, products] }
+                -
+                  handle: images
+                  field:
+                    type: grid
+                    display: Images
+                    instructions: 'The first two sit above the heading. The next two sit below.'
+                    fields:
+                      -
+                        handle: image
+                        field: { type: assets, container: assets, max_files: 1, display: Image }
+                      -
+                        handle: label
+                        field: { type: text, display: Label }
+            explore_tiles:
+              display: 'Explore tiles'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: tiles
+                  field:
+                    type: grid
+                    display: Tiles
+                    fields:
+                      -
+                        handle: image
+                        field: { type: assets, container: assets, max_files: 1, display: Image }
+                      -
+                        handle: kicker
+                        field: { type: text, display: Kicker }
+                      -
+                        handle: title
+                        field: { type: text, display: Title }
+                      -
+                        handle: button_label
+                        field: { type: text, display: 'Button label' }
+                      -
+                        handle: button_url
+                        field: { type: link, display: 'Button URL', collections: [pages, products] }
+                -
+                  handle: view_more_label
+                  field: { type: text, display: 'View more label' }
+                -
+                  handle: view_more_url
+                  field: { type: link, display: 'View more URL', collections: [pages] }
+            video_story:
+              display: 'Video story'
+              fields:
+                -
+                  handle: image
+                  field: { type: assets, container: assets, max_files: 1, display: Image }
+                -
+                  handle: kicker
+                  field: { type: text, display: Kicker }
+                -
+                  handle: title
+                  field: { type: text, display: Title }
+                -
+                  handle: video_url
+                  field: { type: text, display: 'Video URL', instructions: 'Leave empty to show the still without a play button.' }
+                -
+                  handle: heading
+                  field: { type: textarea, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: button_label
+                  field: { type: text, display: 'Button label' }
+                -
+                  handle: button_url
+                  field: { type: link, display: 'Button URL', collections: [pages] }
             newsletter:
               display: Newsletter
               fields:
@@ -168,6 +298,30 @@ fields:
                 -
                   handle: placeholder
                   field: { type: text, display: Placeholder }
+                -
+                  handle: image_left
+                  field: { type: assets, container: assets, max_files: 1, display: 'Top left image' }
+                -
+                  handle: image_left_title
+                  field: { type: text, display: 'Top left label' }
+                -
+                  handle: image_right
+                  field: { type: assets, container: assets, max_files: 1, display: 'Top right image' }
+                -
+                  handle: image_right_title
+                  field: { type: text, display: 'Top right label' }
+                -
+                  handle: image_bottom_left
+                  field: { type: assets, container: assets, max_files: 1, display: 'Bottom left image' }
+                -
+                  handle: image_bottom_left_title
+                  field: { type: text, display: 'Bottom left label' }
+                -
+                  handle: image_bottom_right
+                  field: { type: assets, container: assets, max_files: 1, display: 'Bottom right image' }
+                -
+                  handle: image_bottom_right_title
+                  field: { type: text, display: 'Bottom right label' }
             contact_form:
               display: 'Contact form'
               fields:
@@ -215,8 +369,9 @@ fields:
                     options:
                       grid: Grid
                       page: 'Shop page'
-                      list: List
-                      sidebar: Sidebar
+                      list: 'Shop now'
+                      masonry: Masonry
+                      featured: Featured
                     default: grid
                 -
                   handle: limit
@@ -244,8 +399,9 @@ fields:
                     options:
                       grid: Grid
                       page: 'Blog page'
+                      classic: 'Card grid'
                       masonry: Masonry
-                      classic: Classic
+                      latest: 'Latest slider'
                     default: grid
                 -
                   handle: limit
