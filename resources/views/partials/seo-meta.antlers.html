@@ -1,10 +1,19 @@
-<title>{{ if seo_title }}{{ seo_title }} | {{ elseif title }}{{ title }} | {{ /if }}{{ setting:site_name ?? 'Haven' }}</title>
-<meta name="description" content="{{ seo_description ?? excerpt ?? setting:seo_description }}">
-<meta name="robots" content="{{ seo_robots ?? 'index, follow' }}">
-<meta property="og:title" content="{{ seo_title ?? title ?? setting:site_name }}">
-<meta property="og:description" content="{{ seo_description ?? excerpt ?? setting:seo_description }}">
-{{ if seo_image }}
-<meta property="og:image" content="{{ partial:partials/media-url :file="seo_image" }}">
-{{ elseif setting:seo_image }}
-<meta property="og:image" content="{{ partial:partials/media-url :file="setting:seo_image" }}">
+<title>{{ if seo_title }}{{ seo_title | strip_tags }}{{ if seo_title != setting:site_name }} | {{ setting:site_name ?? 'Haven' }}{{ /if }}{{ elseif title }}{{ title | strip_tags }}{{ if title != setting:site_name }} | {{ setting:site_name ?? 'Haven' }}{{ /if }}{{ else }}{{ setting:site_name ?? 'Haven' }}{{ /if }}</title>
+{{ if seo_description or excerpt or description or content or setting:seo_description }}
+<meta name="description" content="{{ if seo_description }}{{ seo_description | squish | entities }}{{ elseif excerpt }}{{ excerpt | squish | entities }}{{ elseif description }}{{ description | squish | entities }}{{ elseif content }}{{ content | squish | truncate:160:'…' | entities }}{{ elseif setting:seo_description }}{{ setting:seo_description | squish | entities }}{{ /if }}">
+<meta property="og:description" content="{{ if seo_description }}{{ seo_description | squish | entities }}{{ elseif excerpt }}{{ excerpt | squish | entities }}{{ elseif description }}{{ description | squish | entities }}{{ elseif content }}{{ content | squish | truncate:160:'…' | entities }}{{ elseif setting:seo_description }}{{ setting:seo_description | squish | entities }}{{ /if }}">
+<meta name="twitter:description" content="{{ if seo_description }}{{ seo_description | squish | entities }}{{ elseif excerpt }}{{ excerpt | squish | entities }}{{ elseif description }}{{ description | squish | entities }}{{ elseif content }}{{ content | squish | truncate:160:'…' | entities }}{{ elseif setting:seo_description }}{{ setting:seo_description | squish | entities }}{{ /if }}">
 {{ /if }}
+<meta name="robots" content="{{ seo_robots ?? 'index, follow' }}">
+<link rel="canonical" href="{{ permalink ?? current_url }}">
+<meta property="og:type" content="{{ if collection == 'blogs' }}article{{ elseif collection == 'products' }}product{{ else }}website{{ /if }}">
+<meta property="og:url" content="{{ permalink ?? current_url }}">
+<meta property="og:title" content="{{ if seo_title }}{{ seo_title | strip_tags | entities }}{{ elseif title }}{{ title | strip_tags | entities }}{{ else }}{{ setting:site_name | entities }}{{ /if }}">
+{{ if seo_image or image or setting:seo_image }}
+<meta property="og:image" content="{{ seo_origin }}{{ if seo_image }}{{ partial:partials/media-url :file="seo_image" }}{{ elseif image }}{{ partial:partials/media-url :file="image" }}{{ else }}{{ partial:partials/media-url :file="setting:seo_image" }}{{ /if }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ seo_origin }}{{ if seo_image }}{{ partial:partials/media-url :file="seo_image" }}{{ elseif image }}{{ partial:partials/media-url :file="image" }}{{ else }}{{ partial:partials/media-url :file="setting:seo_image" }}{{ /if }}">
+{{ else }}
+<meta name="twitter:card" content="summary">
+{{ /if }}
+<meta name="twitter:title" content="{{ if seo_title }}{{ seo_title | strip_tags | entities }}{{ elseif title }}{{ title | strip_tags | entities }}{{ else }}{{ setting:site_name | entities }}{{ /if }}">

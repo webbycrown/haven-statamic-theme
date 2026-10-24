@@ -2,13 +2,13 @@
 id: linen-shirt
 blueprint: product
 title: 'Linen shirt'
-image: image/images-6.jpg
-gallery:
-  - image/images-7.jpg
-  - image/images-8.jpg
+image: image/haven-linen-shirt.jpg
 price: 89
 description: |
   Breathable everyday shirt.
+gallery:
+  - image/haven-linen-shirt.jpg
+  - image/haven-linen-shirt.jpg
 product_options:
   -
     handle: size
@@ -19,4 +19,5 @@ product_options:
       - L
 categories:
   - apparel
+order: 1
 ---

@@ -8,4 +8,5 @@ description: |
   Adjustable brass desk lamp.
 categories:
   - furniture
+order: 4
 ---

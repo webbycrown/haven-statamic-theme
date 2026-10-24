@@ -8,4 +8,5 @@ description: |
   Solid oak top with tapered legs.
 categories:
   - furniture
+order: 1
 ---

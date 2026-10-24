@@ -8,3 +8,10 @@ tabs:
           -
             handle: title
             field: { type: text, required: true }
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            import: seo

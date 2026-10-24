@@ -33,6 +33,8 @@ The logo is the word Haven (`haven-logo.png`, `haven-footer-logo.png`). The favi
 
 `furn-hero-1.jpg`, `furn-hero-2.jpg`, `furn-hero-3.jpg`, `furn-oak-table.jpg`, `furn-sofa.jpg`, `furn-shelf.jpg`, `furn-lamp.jpg`, `furn-room.jpg`, `furn-studio.jpg`, `furn-oak-grain.jpg`, and `furn-finish.jpg` are interior and furniture pictures made for Haven. No brand name is printed on them.
 
+`haven-linen-shirt.jpg`, `haven-wool-coat.jpg`, `haven-canvas-tote.jpg`, `haven-soft-trousers.jpg`, `haven-knit-sweater.jpg`, `haven-silk-scarf.jpg`, `haven-denim-jacket.jpg`, and `haven-linen-dress.jpg` are apparel stills made for Haven. `kiln-ceramic-bowl.jpg`, `kiln-candle-set.jpg`, `kiln-linen-throw.jpg`, and `kiln-wood-tray.jpg` are home-goods stills. No brand name is printed on them.
+
 `images-1.jpg`, `images-2.jpg`, `images-3.jpg`, `images-4.jpg`, `images-6.jpg`, `images-7.jpg`, `images-8.jpg`, `images-9.jpg`, `images-10.jpg`, `images-12.jpg`, `images-13.jpg`, `images-14.jpg`, `images-16.jpg`, `images-17.jpg`, `images-18.jpg`, `images-19.jpg`, `images-20.jpg`, `images-23.jpg`, `images-24.jpg`, and `images-25.jpg` are photographs of people wearing jewellery. Each file was opened. No bank name appears in them. A licence to resell these photographs is not included. Replace them with your own pictures before a client site goes live.
 
 The kit does not include a video file.

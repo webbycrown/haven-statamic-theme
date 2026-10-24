@@ -63,14 +63,14 @@ App\Providers\HavenServiceProvider::class,
 
 ## Collections and taxonomies
 
-- **Pages** — marketing pages with Theme sections
-- **Products** — catalogue with image, price, optional option sets
-- **Blogs** — journal posts
-- **Categories** taxonomy — group products by industry niche
+- **Pages** — marketing pages with Theme sections and an SEO tab
+- **Products** — catalogue with image, price, optional option sets, and an SEO tab
+- **Blogs** — journal posts with an SEO tab
+- **Categories** taxonomy — group products by industry niche, with an SEO tab
 
 ## Globals
 
-- **Setting** — site name, industry, logo, phone, email, address, social, form button/success copy
+- **Setting** — site name, industry, logo, phone, email, address, social, form button/success copy, default SEO description and social image
 
 ## Navigation
 

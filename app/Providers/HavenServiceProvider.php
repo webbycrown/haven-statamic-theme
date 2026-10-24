@@ -42,6 +42,14 @@ class HavenServiceProvider extends ServiceProvider
             app(HavenStore::class)->share();
         });
 
+        $appUrl = rtrim((string) config('app.url'), '/');
+        $parts = parse_url($appUrl) ?: [];
+        $origin = ($parts['scheme'] ?? 'https').'://'.($parts['host'] ?? 'localhost');
+        if (! empty($parts['port'])) {
+            $origin .= ':'.$parts['port'];
+        }
+        View::share('seo_origin', $origin);
+
         View::composer('search', function ($view) {
             $query = trim((string) request()->query('q', ''));
             $results = app(HavenSearch::class)->results($query);

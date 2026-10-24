@@ -90,7 +90,18 @@ tabs:
             field: { type: text, display: 'Related pieces heading' }
           -
             handle: seo_description
-            field: { type: textarea, display: 'Default SEO description' }
+            field:
+              type: textarea
+              display: 'Default SEO description'
+              instructions: 'Used when a page, product, or journal entry has no SEO description.'
+          -
+            handle: seo_image
+            field:
+              type: assets
+              container: assets
+              max_files: 1
+              display: 'Default social image'
+              instructions: 'Used when a page, product, or journal entry has no social image.'
           -
             handle: shipping_note
             field: { type: text, display: 'Shipping note' }

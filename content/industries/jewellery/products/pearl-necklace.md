@@ -19,4 +19,5 @@ reviews:
     text: I asked about shipping before ordering. The reply was clear.
 categories:
   - jewellery
+order: 1
 ---

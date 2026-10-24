@@ -19,4 +19,5 @@ reviews:
     text: Simple shape. I checked the size note before sending an inquiry.
 categories:
   - jewellery
+order: 2
 ---

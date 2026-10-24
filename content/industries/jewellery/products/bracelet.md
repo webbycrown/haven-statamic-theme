@@ -19,4 +19,5 @@ reviews:
     text: Shorter than I expected. The length is listed in the description.
 categories:
   - jewellery
+order: 3
 ---

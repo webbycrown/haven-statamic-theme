@@ -11,6 +11,6 @@ page_builder:
     text: The same notes, set in a taller grid. Each card uses the post title, date, and excerpt.
     button_label: Read more
     style: masonry
-    limit: 9
+    limit: 24
 seo_title: Journal masonry
 ---

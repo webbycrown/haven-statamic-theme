@@ -68,3 +68,10 @@ tabs:
           -
             handle: categories
             field: { type: terms, taxonomies: [categories], display: Categories }
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            import: seo

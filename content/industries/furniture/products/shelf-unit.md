@@ -8,4 +8,5 @@ description: |
   Open shelving for books and ceramics.
 categories:
   - furniture
+order: 3
 ---

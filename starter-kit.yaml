@@ -4,6 +4,7 @@ repo: webbycrown/haven-statamic-theme
 export_paths:
   - content
   - app/Http
+  - app/Modifiers
   - app/Services
   - app/Support
   - app/Providers/HavenServiceProvider.php

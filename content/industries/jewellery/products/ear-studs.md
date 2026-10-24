@@ -19,4 +19,5 @@ reviews:
     text: The finish matches the photo. I sent a question about the post length.
 categories:
   - jewellery
+order: 4
 ---

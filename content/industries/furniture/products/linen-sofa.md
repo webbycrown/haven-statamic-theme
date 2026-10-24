@@ -8,4 +8,5 @@ description: |
   Deep seat sofa in natural linen.
 categories:
   - furniture
+order: 2
 ---

@@ -44,3 +44,10 @@ tabs:
           -
             handle: closing
             field: { type: markdown, display: Closing }
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            import: seo

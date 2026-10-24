@@ -11,5 +11,5 @@ page_builder:
     text: Notes from the studio on cloth, metal, wood, and the pieces in the current edit.
     button_label: Read more
     style: page
-    limit: 6
+    limit: 24
 ---
