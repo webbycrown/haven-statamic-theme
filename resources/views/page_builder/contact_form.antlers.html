@@ -19,31 +19,5 @@
 				<div class="stay-connect-success">{{ setting:contact_success ?? 'Thanks — we will reply soon.' }}</div>
 			{{ /form:contact }}
 		</div>
-		<div class="jw_contact_add_wrap">
-			{{ if setting:address }}
-			<div class="jw_contact_add_col">
-				<div class="jw_contact_add_icon">
-					<span class="material-symbols-sharp" aria-hidden="true">location_on</span>
-				</div>
-				<p>{{ setting:address }}</p>
-			</div>
-			{{ /if }}
-			{{ if setting:phone }}
-			<div class="jw_contact_add_col">
-				<div class="jw_contact_add_icon">
-					<span class="material-symbols-sharp" aria-hidden="true">call</span>
-				</div>
-				<p><a href="tel:{{ setting:phone | replace:' ','' }}">{{ setting:phone }}</a></p>
-			</div>
-			{{ /if }}
-			{{ if setting:email }}
-			<div class="jw_contact_add_col">
-				<div class="jw_contact_add_icon">
-					<span class="material-symbols-sharp" aria-hidden="true">mail</span>
-				</div>
-				<p><a href="mailto:{{ setting:email }}">{{ setting:email }}</a></p>
-			</div>
-			{{ /if }}
-		</div>
 	</div>
 </section>

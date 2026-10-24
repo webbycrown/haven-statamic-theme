@@ -76,6 +76,33 @@
 		{{ partial:partials/show-all }}
 	</div>
 </section>
+{{ elseif style == "collection" }}
+<section class="jw_collection_hero_section">
+	<div class="jw_container">
+		<div class="jw_collection_hero_wrap">
+			<div class="jw_collection_hero_title">
+				<h2 class="jw_sub_title">{{ heading ?? 'Shop Stores' }}</h2>
+				{{ if text }}<p>{{ text }}</p>{{ /if }}
+			</div>
+			<div class="jw_shop_stores_wrap">
+				{{ collection:products paginate="{limit ?? 12}" sort="order:asc" as="pieces" }}
+				{{ pieces }}
+				<div class="jw_shop_stores_card_box jw_data_title" data-title="{{ title }}" data-aos="fade-up" data-aos-duration="1000">
+					<div class="jw_shop_stores_images jw_images_cover">
+						<img src="{{ partial:partials/media-url :file="image" fallback="image/images-19.jpg" }}" alt="{{ title }}">
+					</div>
+					<div class="jw_shop_stores_card_box_content">
+						<h5><a href="{{ url }}">{{ title }}</a></h5>
+						{{ if price }}<p>{{ setting:currency_symbol ?? '$' }} {{ price }}</p>{{ /if }}
+					</div>
+				</div>
+				{{ /pieces }}
+				{{ paginate }}{{ partial:partials/pagination }}{{ /paginate }}
+				{{ /collection:products }}
+			</div>
+		</div>
+	</div>
+</section>
 {{ elseif style == "featured" }}
 <section class="jw_featured-Product_section">
 	<div class="jw_container">

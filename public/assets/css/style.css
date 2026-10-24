@@ -1504,6 +1504,9 @@ p.jw_single_price {
 .jw_contact_page_section form .jw_custom_buttom img {
     filter: saturate(0%) brightness(660%);
 }
+.jw_contact_details_section {
+    padding-bottom: 80px;
+}
 .jw_contact_add_wrap {
     display: flex;
     align-items: flex-start;

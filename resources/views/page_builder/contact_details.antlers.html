@@ -1,0 +1,38 @@
+<section class="jw_contact_details_section">
+	<div class="jw_container">
+		<div class="jw_contact_add_wrap">
+			{{ if address or setting:address }}
+			<div class="jw_contact_add_col">
+				<div class="jw_contact_add_icon">
+					<span class="material-symbols-sharp" aria-hidden="true">location_on</span>
+				</div>
+				<p>{{ if address }}{{ address }}{{ else }}{{ setting:address }}{{ /if }}</p>
+			</div>
+			{{ /if }}
+			{{ if phone or setting:phone }}
+			<div class="jw_contact_add_col">
+				<div class="jw_contact_add_icon">
+					<span class="material-symbols-sharp" aria-hidden="true">call</span>
+				</div>
+				{{ if phone }}
+				<p><a href="tel:{{ phone | replace:' ','' }}">{{ phone }}</a></p>
+				{{ else }}
+				<p><a href="tel:{{ setting:phone | replace:' ','' }}">{{ setting:phone }}</a></p>
+				{{ /if }}
+			</div>
+			{{ /if }}
+			{{ if email or setting:email }}
+			<div class="jw_contact_add_col">
+				<div class="jw_contact_add_icon">
+					<span class="material-symbols-sharp" aria-hidden="true">mail</span>
+				</div>
+				{{ if email }}
+				<p><a href="mailto:{{ email }}">{{ email }}</a></p>
+				{{ else }}
+				<p><a href="mailto:{{ setting:email }}">{{ setting:email }}</a></p>
+				{{ /if }}
+			</div>
+			{{ /if }}
+		</div>
+	</div>
+</section>

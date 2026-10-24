@@ -40,7 +40,7 @@ App\Providers\HavenServiceProvider::class,
 | Search | `/search` | pieces and journal notes |
 | Product detail | `/products/{slug}` | `products/show` |
 | Category | `/categories/{slug}` | `category` |
-| Collection | `/collection` | collection grid |
+| Collection | `/collection` | page_builder + shop_products collection style |
 | Cart | `/cart` | session cart |
 | Checkout | `/checkout` | cart inquiry, no card charge |
 | Blog | `/blog` | page_builder + blogs |
@@ -57,7 +57,7 @@ App\Providers\HavenServiceProvider::class,
 
 ## Theme sections (page_builder)
 
-`home_hero`, `home_hero_two`, `about_intro`, `collection_feature`, `explore_slider`, `explore_tiles`, `features`, `best_collection`, `video_feature`, `video_story`, `shop_products` (grid / shop page / shop now / masonry / featured), `newsletter`, `blogs` (grid / blog page / card grid / masonry / latest slider), `contact_form`, `heading_banner`, `legal_copy`
+`home_hero`, `home_hero_two`, `about_intro`, `collection_feature`, `explore_slider`, `explore_tiles`, `features`, `best_collection`, `video_feature`, `video_story`, `shop_products` (grid / shop page / shop now / masonry / collection / featured), `newsletter`, `blogs` (grid / blog page / card grid / masonry / latest slider), `contact_form`, `contact_details`, `heading_banner`, `legal_copy`
 
 ---
 
