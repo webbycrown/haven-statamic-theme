@@ -1,7 +1,7 @@
 ---
 id: home-two
 blueprint: page
-title: Lookbook
+title: Home Two
 template: page
 page_builder:
   -
@@ -137,5 +137,5 @@ page_builder:
     button_label: Read more
     style: latest
     limit: 3
-seo_title: Haven lookbook
+seo_title: Home Two
 ---

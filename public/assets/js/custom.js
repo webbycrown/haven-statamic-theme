@@ -12,12 +12,14 @@ jQuery(document).ready(function () {
   var mySwiper = new Swiper(".home-slider .swiper-container", {
     direction: "vertical",
     loop: true,
-    pagination: ".home-slider .jw_swiper-pagination",
+    pagination: {
+      el: ".home-slider .jw_swiper-pagination",
+      clickable: true,
+    },
     grabCursor: true,
-    paginationClickable: true,
     parallax: true,
     effect: "slide",
-    mousewheelControl: 1,
+    mousewheel: true,
     autoplay: {
       delay: 1000,
       disableOnInteraction: false,

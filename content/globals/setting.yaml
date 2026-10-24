@@ -14,7 +14,7 @@ data:
   facebook_url: 'https://www.facebook.com/'
   instagram_url: 'https://www.instagram.com/'
   twitter_url: 'https://x.com/'
-  contact_button: Send message
+  contact_button: Submit
   contact_success: Thanks — we will reply soon.
   newsletter_button: Subscribe
   newsletter_success: Thanks — you are on the list.

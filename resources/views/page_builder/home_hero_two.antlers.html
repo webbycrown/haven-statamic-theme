@@ -9,12 +9,12 @@
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
 				{{ slides }}
-				<div class="swiper-slide">
+				<div class="swiper-slide swiper-slide-{{ if count == 1 }}one{{ elseif count == 2 }}two{{ else }}three{{ /if }}">
 					<div class="swiper-image swiper-right" data-swiper-parallax-y="-20%">
-						<div class="swiper-image-inner swiper-image-left" style="background-image:url('{{ partial:partials/media-url :file="image_left" fallback="image/images-1.jpg" }}')"></div>
+						<div class="swiper-image-inner swiper-image-left swiper-image-{{ if count == 1 }}one{{ elseif count == 2 }}three{{ else }}five{{ /if }}" style="background-image:url('{{ partial:partials/media-url :file="image_left" fallback="image/images-1.jpg" }}')"></div>
 					</div>
 					<div class="swiper-image swiper-left" data-swiper-parallax-y="35%">
-						<div class="swiper-image-inner swiper-image-right" style="background-image:url('{{ partial:partials/media-url :file="image_right" fallback="image/images-2.jpg" }}')"></div>
+						<div class="swiper-image-inner swiper-image-right swiper-image-{{ if count == 1 }}two{{ elseif count == 2 }}four{{ else }}six{{ /if }}" style="background-image:url('{{ partial:partials/media-url :file="image_right" fallback="image/images-2.jpg" }}')"></div>
 					</div>
 				</div>
 				{{ /slides }}

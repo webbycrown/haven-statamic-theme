@@ -33,7 +33,7 @@ App\Providers\HavenServiceProvider::class,
 | Page | URL | Notes |
 |---|---|---|
 | Home | `/` | page_builder |
-| Lookbook | `/home-two` | second home from the HTML index-two layout |
+| Home Two | `/home-two` | second home from the HTML index-two layout |
 | Shop | `/shop` | page_builder + shop_products |
 | Shop now | `/shop-now` | shop cards from shop_v2 |
 | Shop gallery | `/shop-masonry` | masonry shop from shop_v3 |

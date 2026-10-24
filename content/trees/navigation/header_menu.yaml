@@ -2,6 +2,8 @@ tree:
   -
     entry: home
   -
+    entry: home-two
+  -
     entry: shop
   -
     entry: about

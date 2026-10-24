@@ -5,7 +5,7 @@
 			{{ if text }}<p>{{ text }}</p>{{ /if }}
 		</div>
 		<div class="jw_contact_form">
-			{{ form:contact class="js-theme-form" }}
+			{{ form:contact class="js-theme-form" novalidate="novalidate" }}
 				<label class="jw_sr_only" for="haven-c-name">Name</label>
 				<input id="haven-c-name" type="text" name="name" placeholder="Name" required value="{{ old:name }}">
 				<label class="jw_sr_only" for="haven-c-phone">Phone</label>

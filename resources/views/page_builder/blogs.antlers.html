@@ -16,15 +16,15 @@
 							<div class="content__item-title"></div>
 						</div>
 						<div class="jw_blog_page_content">
-							{{ if date }}<p>{{ date format="M,j Y" }}</p>{{ /if }}
-							<h5>{{ title }}</h5>
-							<a class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+							{{ if date }}<p data-aos="fade-up" data-aos-duration="1000">{{ date format="M,j Y" }}</p>{{ /if }}
+							<h5 data-aos="fade-up" data-aos-duration="1000">{{ title }}</h5>
+							<a data-aos="fade-up" data-aos-duration="1000" class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
 						</div>
 						{{ else }}
 						<div class="jw_blog_page_content">
-							{{ if date }}<p>{{ date format="M,j Y" }}</p>{{ /if }}
-							<h5>{{ title }}</h5>
-							<a class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+							{{ if date }}<p data-aos="fade-up" data-aos-duration="1000">{{ date format="M,j Y" }}</p>{{ /if }}
+							<h5 data-aos="fade-up" data-aos-duration="1000">{{ title }}</h5>
+							<a data-aos="fade-up" data-aos-duration="1000" class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
 						</div>
 						<div class="jw_blog_page_images jw_images_cover content__item">
 							<img class="content__item-img" src="{{ partial:partials/media-url :file="image" fallback="image/images-16.jpg" }}" alt="{{ title }}">
@@ -51,11 +51,11 @@
 			{{ posts }}
 			<div class="jw_blog_grid_wrapper">
 				<div class="jw_blog_grid_img">
-					<a href="{{ url }}"><img src="{{ partial:partials/media-url :file="image" fallback="image/images-16.jpg" }}" alt="{{ title }}"></a>
+					<img src="{{ partial:partials/media-url :file="image" fallback="image/images-16.jpg" }}" alt="{{ title }}">
 				</div>
 				{{ if date }}<div class="jw_grid_date"><p>{{ date format="M,j Y" }}</p></div>{{ /if }}
-				<h2><a href="{{ url }}">{{ title }}</a></h2>
-				<a class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+				<h2>{{ title }}</h2>
+				<a data-aos="fade-up" data-aos-duration="1000" class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
 			</div>
 			{{ /posts }}
 			{{ paginate }}{{ partial:partials/pagination }}{{ /paginate }}
@@ -75,12 +75,12 @@
 			{{ posts }}
 			<div class="jw_blog_masonary_wrapper">
 				<div class="jw_blog_masonary_img">
-					<a href="{{ url }}"><img src="{{ partial:partials/media-url :file="image" fallback="image/images-16.jpg" }}" alt="{{ title }}"></a>
+					<img src="{{ partial:partials/media-url :file="image" fallback="image/images-16.jpg" }}" alt="{{ title }}">
 				</div>
 				{{ if date }}<div class="jw_grid_date"><p>{{ date format="M,j Y" }}</p></div>{{ /if }}
-				<h2><a href="{{ url }}">{{ title }}</a></h2>
+				<h2>{{ title }}</h2>
 				{{ if excerpt }}<p>{{ excerpt }}</p>{{ /if }}
-				<a class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+				<a data-aos="fade-up" data-aos-duration="1000" class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
 			</div>
 			{{ /posts }}
 			{{ paginate }}{{ partial:partials/pagination }}{{ /paginate }}
@@ -108,11 +108,11 @@
 					<div class="swiper-slide">
 						<div class="jw_blog_two_card_box">
 							<div class="jw_blog_two_images jw_images_cover">
-								<a href="{{ url }}"><img src="{{ partial:partials/media-url :file="image" fallback="image/images-16.jpg" }}" alt="{{ title }}"></a>
+								<img src="{{ partial:partials/media-url :file="image" fallback="image/images-16.jpg" }}" alt="{{ title }}">
 							</div>
 							<div class="jw_blog_two_card_box_content">
 								{{ if date }}<p>{{ date format="M,j Y" }}</p>{{ /if }}
-								<h5><a href="{{ url }}">{{ title }}</a></h5>
+								<h5>{{ title }}</h5>
 								<a class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
 							</div>
 						</div>
@@ -120,6 +120,30 @@
 					{{ /collection:blogs }}
 				</div>
 			</div>
+		</div>
+	</div>
+</section>
+{{ elseif style == "home_two" or style == "home_three" }}
+<section class="jw_blog_page_section">
+	<div class="jw_container">
+		<div class="jw_blog_page_title">
+			<h2 class="jw_sub_title">{{ heading ?? 'Journal' }}</h2>
+			{{ if text }}<p>{{ text }}</p>{{ /if }}
+		</div>
+		<div class="jw_blog_page_wrap">
+			{{ collection:blogs limit="{limit ?? 3}" sort="date:desc" }}
+			<div class="jw_blog_page_box">
+				<div class="jw_blog_page_images jw_images_cover">
+					<a href="{{ url }}"><img src="{{ partial:partials/media-url :file="image" fallback="image/images-16.jpg" }}" alt="{{ title }}"></a>
+				</div>
+				<div class="jw_blog_page_content">
+					{{ if date }}<p>{{ date format="M,j Y" }}</p>{{ /if }}
+					<h5>{{ title }}</h5>
+					{{ if excerpt }}<p>{{ excerpt }}</p>{{ /if }}
+					<a class="jw_custom_buttom" href="{{ url }}"><span>{{ button_label ?? 'Read more' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></a>
+				</div>
+			</div>
+			{{ /collection:blogs }}
 		</div>
 	</div>
 </section>
