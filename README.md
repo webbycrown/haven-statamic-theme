@@ -34,9 +34,9 @@ App\Providers\HavenServiceProvider::class,
 |---|---|---|
 | Home | `/` | page_builder |
 | Home Two | `/home-two` | second home from the HTML index-two layout |
-| Shop | `/shop` | page_builder + shop_products |
-| Shop now | `/shop-now` | shop cards from shop_v2 |
-| Shop gallery | `/shop-masonry` | masonry shop from shop_v3 |
+| Shop | `/shop` | full catalogue |
+| Shop now | `/shop-now` | same catalogue as cards |
+| Shop gallery | `/shop-masonry` | same catalogue as a masonry gallery |
 | Search | `/search` | pieces and journal notes |
 | Product detail | `/products/{slug}` | `products/show` |
 | Category | `/categories/{slug}` | `category` |
@@ -81,7 +81,7 @@ App\Providers\HavenServiceProvider::class,
 ## Features
 
 - Lifestyle storefront with shared jewellery-derived design (`jw_` CSS classes kept)
-- Industry packs under `content/industries/{apparel,furniture,jewellery,home}/`
+- Industry packs under `content/industries/` for jewellery, furniture, apparel, home, beauty, plants, workshop, lighting, and stationery
 - Session cart with add / update / remove
 - Product inquiry and cart inquiry instead of card payment
 - AJAX forms via `theme-forms.js` (no `js="true"` on form tags)
@@ -128,9 +128,6 @@ Optional HTML redirects, only if old template filenames still get traffic. New S
 
 ```php
 Route::redirect('/index-two.html', '/home-two');
-Route::redirect('/shop_v1.html', '/shop');
-Route::redirect('/shop_v2.html', '/shop-now');
-Route::redirect('/shop_v3.html', '/shop-masonry');
 Route::redirect('/index.html', '/');
 Route::redirect('/shop.html', '/shop');
 Route::redirect('/single-product.html', '/shop');
