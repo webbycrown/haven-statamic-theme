@@ -35,6 +35,8 @@ The logo is the word Haven (`haven-logo.png`, `haven-footer-logo.png`). The favi
 
 `haven-linen-shirt.jpg`, `haven-wool-coat.jpg`, `haven-canvas-tote.jpg`, `haven-soft-trousers.jpg`, `haven-knit-sweater.jpg`, `haven-silk-scarf.jpg`, `haven-denim-jacket.jpg`, and `haven-linen-dress.jpg` are apparel stills made for Haven. `kiln-ceramic-bowl.jpg`, `kiln-candle-set.jpg`, `kiln-linen-throw.jpg`, and `kiln-wood-tray.jpg` are home-goods stills. No brand name is printed on them.
 
+`lumen-lip-colour.jpg`, `lumen-face-oil.jpg`, `lumen-hand-cream.jpg`, and `lumen-brow-pencil.jpg` are beauty stills. `grove-branch-arrangement.jpg`, `grove-dried-bunch.jpg`, `grove-speckled-vase.jpg`, and `grove-window-plant.jpg` are plant stills. `alder-brass-task-lamp.jpg`, `alder-hand-plane.jpg`, `alder-linen-roll.jpg`, and `alder-oak-blocks.jpg` are workshop stills. `wick-desk-lamp.jpg`, `wick-brass-arm.jpg`, `wick-linen-shade.jpg`, and `wick-cord-set.jpg` are lighting stills. `quill-notebook.jpg`, `quill-ink.jpg`, `quill-envelopes.jpg`, `quill-seal.jpg`, and `quill-desk.jpg` are stationery stills. All of these were made for Haven. No brand name is printed on them.
+
 `images-1.jpg`, `images-2.jpg`, `images-3.jpg`, `images-4.jpg`, `images-6.jpg`, `images-7.jpg`, `images-8.jpg`, `images-9.jpg`, `images-10.jpg`, `images-12.jpg`, `images-13.jpg`, `images-14.jpg`, `images-16.jpg`, `images-17.jpg`, `images-18.jpg`, `images-19.jpg`, `images-20.jpg`, `images-23.jpg`, `images-24.jpg`, and `images-25.jpg` are photographs of people wearing jewellery. Each file was opened. No bank name appears in them. A licence to resell these photographs is not included. Replace them with your own pictures before a client site goes live.
 
 The kit does not include a video file.

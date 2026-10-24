@@ -1,0 +1,7 @@
+industry: lighting
+industry_label: 'Lighting shop'
+hero_title: 'Light for the desk'
+hero_images:
+  - image/wick-desk-lamp.jpg
+  - image/wick-brass-arm.jpg
+  - image/wick-linen-shade.jpg

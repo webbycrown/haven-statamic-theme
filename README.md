@@ -1,6 +1,6 @@
 # Haven — Statamic Starter Kit
 
-Haven is a lifestyle commerce starter kit for apparel, furniture, jewellery, and home brands. Built for Statamic 5, it keeps one visual design and swaps demo copy through a post-install industry setup.
+Haven is a lifestyle commerce starter kit with nine catalogues: jewellery, furniture, apparel, home, beauty, plants, workshop, lighting, and stationery. Built for Statamic 5, it keeps one visual design and swaps demo copy through a post-install industry setup.
 
 **One Page template.** Marketing pages use Theme sections in the Control Panel. Functional templates cover product detail, shop cart, blog detail, category archive, account, and sign-in shells.
 
@@ -14,7 +14,7 @@ Starter-kit install is non-interactive. Run one command to apply a niche demo pa
 
 ```bash
 php please haven:setup apparel
-# or: furniture | jewellery | home
+# or: furniture | jewellery | home | beauty | plants | workshop | lighting | stationery
 ```
 
 This sets `Setting.industry`, replaces sample products (and matching blog titles), and refreshes the Stache. If you skip it, the default pack is **apparel**.

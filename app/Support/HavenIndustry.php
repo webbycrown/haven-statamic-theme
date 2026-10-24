@@ -8,7 +8,7 @@ use Statamic\Facades\YAML;
 
 class HavenIndustry
 {
-    public const SLUGS = ['apparel', 'furniture', 'jewellery', 'home'];
+    public const SLUGS = ['apparel', 'furniture', 'jewellery', 'home', 'beauty', 'plants', 'workshop', 'lighting', 'stationery'];
 
     public static function apply(string $industry): bool
     {

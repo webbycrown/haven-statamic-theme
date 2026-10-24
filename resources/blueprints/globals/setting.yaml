@@ -14,10 +14,15 @@ tabs:
               type: select
               display: Industry
               options:
-                apparel: Apparel
-                furniture: Furniture
                 jewellery: Jewellery
+                furniture: Furniture
+                apparel: Apparel
                 home: Home
+                beauty: Beauty
+                plants: Plants
+                workshop: Workshop
+                lighting: Lighting
+                stationery: Stationery
               default: apparel
           -
             handle: industry_label

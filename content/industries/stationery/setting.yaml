@@ -1,0 +1,7 @@
+industry: stationery
+industry_label: 'Stationery shop'
+hero_title: 'Paper for the desk'
+hero_images:
+  - image/quill-notebook.jpg
+  - image/quill-ink.jpg
+  - image/quill-desk.jpg
