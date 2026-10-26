@@ -5,7 +5,7 @@
 			<p>{{ setting:inquiry_note ?? 'Nothing on this shop is charged. Send the bag as an inquiry and the studio will reply.' }}</p>
 		</div>
 		{{ if haven_cart_count > 0 }}
-		{{ form:cart_inquiry class="js-theme-form" }}
+		{{ form:cart_inquiry class="js-theme-form js-clear-cart" }}
 			<input type="hidden" name="cart_summary" value="{{ haven_cart_summary }}">
 			<div class="jw_checkout_page_wrap">
 				<div class="jw_checkout_page_form">
@@ -46,7 +46,7 @@
 							<h6>Subtotal</h6>
 						</div>
 						{{ haven_cart }}
-						<div class="jw_payment_subtotal">
+						<div class="jw_payment_subtotal js-inquiry-line">
 							<p>{{ title }} × {{ qty }}</p>
 							<p>{{ total_label }}</p>
 						</div>
@@ -54,7 +54,7 @@
 						<div class="jw_payment_shipping_detail">
 							<div class="jw_payment_subtotal">
 								<h6>Subtotal</h6>
-								<p>{{ haven_cart_subtotal }}</p>
+								<p class="js-inquiry-subtotal">{{ haven_cart_subtotal }}</p>
 							</div>
 							<ul>
 								<li><p><span>Shipping:</span> <span>{{ setting:shipping_note ?? 'Quoted with your inquiry' }}</span></p></li>
@@ -62,7 +62,7 @@
 						</div>
 						<div class="jw_payment_total">
 							<h6>Total</h6>
-							<p>{{ haven_cart_subtotal }}</p>
+							<p class="js-inquiry-total">{{ haven_cart_subtotal }}</p>
 						</div>
 						<div class="jw_payment_select">
 							<div class="accordion">

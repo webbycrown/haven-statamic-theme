@@ -47,6 +47,19 @@
     }).done(function () {
       $ok.addClass('is-visible');
       form.reset();
+      if ($form.hasClass('js-clear-cart')) {
+        $('.jw_mini_cart_product').remove();
+        var $col = $('.jw_mini_crat_product_col');
+        if (!$col.children().length) {
+          $col.append('<p>Your cart is empty.</p>');
+        }
+        $('.jw_totle_price, .js-inquiry-subtotal, .js-inquiry-total').each(function () {
+          var symbol = String($(this).text()).replace(/[0-9.,\s]/g, '') || '$';
+          $(this).text(symbol + '0.00');
+        });
+        $('.jw_cart_count').remove();
+        $form.find('.js-inquiry-line').remove();
+      }
     }).fail(function (xhr) {
       $alert.text(errorText(xhr)).addClass('is-visible');
     }).always(function () {

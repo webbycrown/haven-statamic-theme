@@ -23,7 +23,7 @@ Libraries and fonts are bundled under `public/assets` and loaded locally (no `ex
 |---|---|---|
 | Material Symbols Outlined / Sharp | `font/MaterialSymbolsOutlined.woff2`, `font/MaterialSymbolsSharp.woff2` | Apache-2.0 (Google Material Symbols, subset of the icons this theme uses) |
 | Sora Regular | `font/Sora-Regular.{eot,ttf,woff,woff2}` | OFL-1.1 |
-| Erotique Alternate Trial Bold | `font/ErotiqueAlternateTrial-Bold.{eot,ttf,woff,woff2}` | Trial face shipped with the jewellery HTML. A commercial licence from the foundry is required before a paid release if the trial terms do not allow resale. |
+| [Cormorant Garamond](https://fonts.google.com/specimen/Cormorant+Garamond) Bold | `font/CormorantGaramond-Bold.woff2`, `font/CormorantGaramond-Bold.woff`, `font/CormorantGaramond-OFL.txt` | OFL-1.1 (latin 700 subset). The font may be bundled with this kit. It is not sold on its own. |
 
 Material Symbols faces use `font-feature-settings: 'liga'` so ligature icon names render as glyphs.
 
@@ -37,6 +37,6 @@ The logo is the word Haven (`haven-logo.png`, `haven-footer-logo.png`). The favi
 
 `lumen-lip-colour.jpg`, `lumen-face-oil.jpg`, `lumen-hand-cream.jpg`, and `lumen-brow-pencil.jpg` are beauty stills. `grove-branch-arrangement.jpg`, `grove-dried-bunch.jpg`, `grove-speckled-vase.jpg`, and `grove-window-plant.jpg` are plant stills. `alder-brass-task-lamp.jpg`, `alder-hand-plane.jpg`, `alder-linen-roll.jpg`, and `alder-oak-blocks.jpg` are workshop stills. `wick-desk-lamp.jpg`, `wick-brass-arm.jpg`, `wick-linen-shade.jpg`, and `wick-cord-set.jpg` are lighting stills. `quill-notebook.jpg`, `quill-ink.jpg`, `quill-envelopes.jpg`, `quill-seal.jpg`, and `quill-desk.jpg` are stationery stills. All of these were made for Haven. No brand name is printed on them.
 
-`images-1.jpg`, `images-2.jpg`, `images-3.jpg`, `images-4.jpg`, `images-6.jpg`, `images-7.jpg`, `images-8.jpg`, `images-9.jpg`, `images-10.jpg`, `images-12.jpg`, `images-13.jpg`, `images-14.jpg`, `images-16.jpg`, `images-17.jpg`, `images-18.jpg`, `images-19.jpg`, `images-20.jpg`, `images-23.jpg`, `images-24.jpg`, and `images-25.jpg` are photographs of people wearing jewellery. Each file was opened. No bank name appears in them. A licence to resell these photographs is not included. Replace them with your own pictures before a client site goes live.
+`images-1.jpg`, `images-2.jpg`, `images-3.jpg`, `images-4.jpg`, `images-6.jpg`, `images-7.jpg`, `images-8.jpg`, `images-9.jpg`, `images-10.jpg`, `images-12.jpg`, `images-13.jpg`, `images-14.jpg`, `images-16.jpg`, `images-17.jpg`, `images-18.jpg`, `images-19.jpg`, `images-20.jpg`, `images-23.jpg`, `images-24.jpg`, and `images-25.jpg` are jewellery stills made for Haven (a chain, hoops, a signet, a pendant, pearls, studs, bracelets, a cuff, drops, a locket, stacking rings, a ribbon choker, an ear cuff, a band, a leaf brooch, an anklet, a bangle, and a collar). No person is in them. No brand name is printed on them. WebbyCrown holds the copyright and may redistribute them with this kit.
 
 The kit does not include a video file.

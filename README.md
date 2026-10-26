@@ -6,6 +6,10 @@ Haven is a lifestyle commerce starter kit with nine catalogues: jewellery, furni
 
 Shoppers add items to a session cart and send a cart or product inquiry. There is no card checkout or payment capture.
 
+## Live demo
+
+[https://haven.webbydemo.in](https://haven.webbydemo.in)
+
 ---
 
 ## After install — choose an industry
@@ -18,6 +22,12 @@ php please haven:setup apparel
 ```
 
 This sets `Setting.industry`, replaces sample products (and matching blog titles), and refreshes the Stache. If you skip it, the default pack is **apparel**.
+
+The command asks before it deletes products and journal entries. Pass `--force` to skip that question:
+
+```bash
+php please haven:setup jewellery --force
+```
 
 Register the kit provider once after install (do not replace `AppServiceProvider`):
 
@@ -151,6 +161,19 @@ Route::redirect('/error.html', '/');
 See [THIRD_PARTY.md](THIRD_PARTY.md) for bundled front-end libraries and licences.
 
 ---
+
+## Support
+
+Questions and issues: [github.com/webbycrown/haven-statamic-theme/issues](https://github.com/webbycrown/haven-statamic-theme/issues) or [WebbyCrown](https://www.webbycrown.com/custom-statamic-development-services-company/).
+
+## Changelog
+
+### Unreleased
+
+- Jewellery photographs are original stills made for Haven, and the display face is Cormorant Garamond (OFL-1.1)
+- Search text and category headings are escaped before they are printed
+- `haven:setup` asks before it replaces products and journal entries
+- A successful cart inquiry empties the session cart
 
 ## Credit
 

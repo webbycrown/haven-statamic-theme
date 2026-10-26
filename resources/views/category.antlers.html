@@ -1,6 +1,6 @@
 <section class="jw_shop_stores_section">
 	<div class="jw_container">
-		<h1 class="jw_sub_title">{{ title ?? (category_slug | deslugify | title) ?? 'Shop' }}</h1>
+		<h1 class="jw_sub_title">{{ (title ?? (category_slug | deslugify | title) ?? 'Shop') | entities }}</h1>
 		<div class="jw_shop_stores_wrap">
 			{{ collection:products taxonomy:categories="{category_slug}" sort="order:asc" }}
 			<div class="jw_shop_stores_card_box jw_data_title" data-title="{{ title }}">

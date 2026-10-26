@@ -1,8 +1,8 @@
 @font-face {
-    font-family: 'Erotique Alternate Trial';
-    src: url('../font/ErotiqueAlternateTrial-Bold.woff2') format('woff2'),
-         url('../font/ErotiqueAlternateTrial-Bold.woff') format('woff');
-    font-weight: bold;
+    font-family: 'Cormorant Garamond';
+    src: url('../font/CormorantGaramond-Bold.woff2') format('woff2'),
+         url('../font/CormorantGaramond-Bold.woff') format('woff');
+    font-weight: 700;
     font-style: normal;
     font-display: block;
 }
@@ -93,7 +93,7 @@ h1,h2,h3,h4,h5,h6 {
     margin: 0;
     line-height: normal;
     font-weight: 700;
-    font-family: 'Erotique Alternate Trial';
+    font-family: 'Cormorant Garamond';
 }
 h1.jw_title {
     font-size: 120px;
@@ -122,7 +122,7 @@ p {
     line-height: normal;
     color: #153462;
     font-weight: 700;
-    font-family: 'Erotique Alternate Trial';
+    font-family: 'Cormorant Garamond';
     display: flex;
     align-items: center;
     grid-gap: 17px;
@@ -376,7 +376,7 @@ body.has-smooth-scroll .jw_main_body {
     -webkit-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-    font-family: 'Erotique Alternate Trial';
+    font-family: 'Cormorant Garamond';
     font-weight: 700;
     font-size: 54px;
     line-height: 65px;
@@ -644,7 +644,7 @@ body.has-smooth-scroll .jw_main_body {
 }
 .jw_all_menu_btn li a span.material-secound-menu {
     font-size: 25px;
-    font-family: 'Erotique Alternate Trial';
+    font-family: 'Cormorant Garamond';
     font-weight: 700;
 }
 .jw_mobile_menu_icon a,
@@ -737,7 +737,7 @@ body.has-smooth-scroll .jw_main_body {
 p.wrap{
     color: #FFF;
     font-size: 41.483px;
-    font-family: Erotique Alternate Trial;
+    font-family: 'Cormorant Garamond';
     font-weight: 700;
     line-height: 67.409px;
 }
@@ -1152,7 +1152,7 @@ p.wrap{
 .jw_newsletter_form input:-ms-input-placeholder {color: #fff;}
 .jw_newsletter_form input::placeholder {color: #fff;}
 .jw_newsletter_form button {
-    font-family: 'Erotique Alternate Trial';
+    font-family: 'Cormorant Garamond';
     font-weight: 700;
     font-size: 16px;
     color: #fff;
@@ -1975,7 +1975,7 @@ h3.jw_sub_wrap {
 
 /*===========================Strat jw_home_hero_two_section =======================*/
 .jw_home_hero_two_section .jw_home_hero_two_wrap h4{
-   font-family: 'Erotique Alternate Trial';
+   font-family: 'Cormorant Garamond';
    font-style: normal;
    font-weight: 700;
    font-size: 41.4825px;
@@ -2060,7 +2060,7 @@ h3.jw_sub_wrap {
     font-size: 90px;
     text-align: left;
     max-width: 464px;
-    margin: auto auto 54px;
+    margin: auto auto 64px;
 }
 .jw_best_collection_form_content {
     text-align: center;
@@ -3118,7 +3118,7 @@ h2.jw_sub_title_wrap {
 }
 .jw_login_page_wrap p a {
     font-weight: 700;
-    font-family: 'Erotique Alternate Trial';
+    font-family: 'Cormorant Garamond';
     color: #133462;
 }
 .jw_login_page_wrap p a:hover {
@@ -3157,7 +3157,7 @@ h2.jw_sub_title_wrap {
     color: #153462;
 }
 .jw_error_page_wrap h6 {
-    font-family: 'Erotique Alternate Trial';
+    font-family: 'Cormorant Garamond';
     font-style: normal;
     font-weight: 700;
     font-size: 8.5vw;
@@ -3377,7 +3377,7 @@ h2.jw_sub_title_wrap {
     .jw_best_collection_section .jw_sub_title {
         font-size: 90px;
         max-width: 464px;
-        margin: auto auto 30px;
+        margin: auto auto 64px;
     }
     .jw_best_collection_wrap .jw_best_collection_col_top .jw_best_collection_images_right {
         max-width: 360px;

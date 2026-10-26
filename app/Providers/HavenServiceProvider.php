@@ -7,9 +7,11 @@ use App\Http\Controllers\CartController;
 use App\Http\Middleware\ShareHavenStore;
 use App\Services\HavenStore;
 use App\Support\HavenSearch;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Statamic\Events\FormSubmitted;
 
 class HavenServiceProvider extends ServiceProvider
 {
@@ -49,6 +51,15 @@ class HavenServiceProvider extends ServiceProvider
             $origin .= ':'.$parts['port'];
         }
         View::share('seo_origin', $origin);
+
+        // The inquiry email already has the bag. Clear it only after that submit succeeds.
+        Event::listen(FormSubmitted::class, function (FormSubmitted $event) {
+            if ($event->submission->form()->handle() !== 'cart_inquiry') {
+                return;
+            }
+
+            session()->forget('haven_cart');
+        });
 
         View::composer('search', function ($view) {
             $query = trim((string) request()->query('q', ''));
