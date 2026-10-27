@@ -168,6 +168,14 @@ Questions and issues: [github.com/webbycrown/haven-statamic-theme/issues](https:
 
 ## Changelog
 
+### Unreleased
+
+- Category archives list the products assigned to that category
+- An empty category says that nothing is filed there
+- Header search opens from the button, including with Enter
+- Cart totals use the same currency symbol as the catalogue
+- Category archives clear the fixed header on a phone, and the product grid has space between cards
+
 ### v1.0.2
 
 - The contact form escapes the name, phone, email, and message it prints back

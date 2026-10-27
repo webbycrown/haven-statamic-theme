@@ -649,12 +649,14 @@ body.has-smooth-scroll .jw_main_body {
 }
 .jw_mobile_menu_icon a,
 .jw_mobile_menu_icon button,
-.jw_all_menu_btn li a {
+.jw_all_menu_btn li a,
+.jw_all_menu_btn li button {
     color: #153462;
 }
 .jw_mobile_menu_icon a:hover,
 .jw_mobile_menu_icon button:hover,
-.jw_all_menu_btn li a:hover {
+.jw_all_menu_btn li a:hover,
+.jw_all_menu_btn li button:hover {
     color: var(--text_hover);
 }
 .jw_mobile_search_btn {
@@ -5019,7 +5021,8 @@ button.jw_remove_cart {
 }
 button.jw_menu_toggle,
 button.jw_menubar_close,
-button.jw_dropdown_click {
+button.jw_dropdown_click,
+button.jw_search_toggle {
     background: none;
     border: 0;
     padding: 0;
@@ -5031,7 +5034,8 @@ button.jw_dropdown_click {
 }
 button.jw_menu_toggle:focus-visible,
 button.jw_menubar_close:focus-visible,
-button.jw_dropdown_click:focus-visible {
+button.jw_dropdown_click:focus-visible,
+button.jw_search_toggle:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 3px;
 }
@@ -5046,5 +5050,60 @@ button.jw_dropdown_click:focus-visible {
 .jw_product_option select.jw_custom_input {
     width: 100%;
     max-width: 240px;
+}
+
+/* Category archive: sit below the fixed header, and keep space between cards. */
+.jw_shop_stores_section {
+    padding: 240px 0 80px;
+}
+.jw_shop_stores_section .jw_sub_title {
+    text-align: center;
+    font-size: 64px;
+    line-height: 1.15;
+    color: #153462;
+    margin: 0 0 40px;
+}
+.jw_shop_stores_section .jw_shop_stores_wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 30px;
+}
+.jw_shop_stores_section .jw_shop_stores_card_box_content {
+    gap: 12px;
+}
+.jw_shop_stores_section .jw_shop_stores_card_box_content h5 {
+    margin: 0;
+    min-width: 0;
+}
+.jw_shop_stores_section .jw_shop_stores_card_box_content h5 a {
+    line-height: 1.25;
+}
+@media (max-width: 991px) {
+    .jw_shop_stores_section {
+        padding-top: 180px;
+    }
+    .jw_shop_stores_section .jw_sub_title {
+        font-size: 42px;
+        margin-bottom: 28px;
+    }
+    .jw_shop_stores_section .jw_shop_stores_wrap {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 16px;
+    }
+}
+@media (max-width: 575px) {
+    .jw_shop_stores_section {
+        padding-top: 170px;
+        padding-bottom: 48px;
+    }
+    .jw_shop_stores_section .jw_sub_title {
+        font-size: 34px;
+        line-height: 1.2;
+        margin-bottom: 24px;
+    }
+    .jw_shop_stores_section .jw_shop_stores_wrap {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
 }
 

@@ -25,7 +25,7 @@
 					</div>
 					<div class="jw_shop_stores_card_box_content">
 						<h5><a href="{{ url }}">{{ title }}</a></h5>
-						{{ if price }}<p>$ {{ price }}</p>{{ else }}<p>{{ kind }}</p>{{ /if }}
+						{{ if price }}<p>{{ setting:currency_symbol ?? '$' }} {{ price }}</p>{{ else }}<p>{{ kind }}</p>{{ /if }}
 					</div>
 				</div>
 				{{ /results }}

@@ -5,26 +5,25 @@ namespace App\Services;
 use App\Support\ProductOptions;
 use Illuminate\Support\Collection;
 use Statamic\Facades\Entry;
+use Statamic\Facades\GlobalSet;
 
 class HavenStore
 {
-    public const CURRENCIES = [
-        'USD' => ['label' => 'USD', 'symbol' => '$', 'rate' => 1],
-        'INR' => ['label' => 'INR', 'symbol' => '₹', 'rate' => 83],
-        'GBP' => ['label' => 'GBP', 'symbol' => '£', 'rate' => 0.79],
-    ];
-
     public const LOCALES = [
         'en' => 'English',
         'es' => 'Spanish',
         'de' => 'German',
     ];
 
-    public function currency(): string
+    public function currencySymbol(): string
     {
-        $code = strtoupper((string) session('haven_currency', 'USD'));
+        try {
+            $symbol = trim((string) (GlobalSet::findByHandle('setting')?->inDefaultSite()?->get('currency_symbol') ?? ''));
+        } catch (\Throwable $e) {
+            $symbol = '';
+        }
 
-        return isset(self::CURRENCIES[$code]) ? $code : 'USD';
+        return $symbol !== '' ? $symbol : '$';
     }
 
     public function locale(): string
@@ -34,13 +33,11 @@ class HavenStore
         return isset(self::LOCALES[$code]) ? $code : 'en';
     }
 
-    public function format(?float $usd): string
+    public function format(?float $amount): string
     {
-        $usd = (float) $usd;
-        $currency = self::CURRENCIES[$this->currency()];
-        $amount = round($usd * $currency['rate'], 2);
+        $amount = round((float) $amount, 2);
 
-        return $currency['symbol'].number_format($amount, 2);
+        return $this->currencySymbol().' '.number_format($amount, 2);
     }
 
     public function items(): array
@@ -157,7 +154,7 @@ class HavenStore
 
                 return $label.' x '.$item['qty'].' = '.$item['total_label'];
             })->implode('; '),
-            'haven_currency' => $this->currency(),
+            'haven_currency' => $this->currencySymbol(),
             'haven_locale' => $this->locale(),
             'haven_locale_label' => self::LOCALES[$this->locale()],
         ]);

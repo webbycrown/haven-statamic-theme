@@ -314,47 +314,34 @@ jQuery(document).ready(function () {
   // quantity
 
 
+  function havenToggleSearch($button, overlayClass) {
+    var $icon = $button.find('span').first();
+    var open = $button.attr('aria-expanded') === 'true';
+    $button.attr('aria-expanded', open ? 'false' : 'true');
+    $icon.toggleClass($button.closest('.jw_mobile_search_btn').length ? 'mobile_search_icon' : 'search_icon');
+    $icon.text($icon.hasClass('search_icon') || $icon.hasClass('mobile_search_icon') ? 'search' : 'close');
+    jQuery('.jw_search_wrap, .overlay').slideToggle();
+    jQuery('body, .jw_main_body .page').toggleClass('noscroll');
+    jQuery('.overlay').toggleClass(overlayClass);
+  }
+
   // search_wrap
-  jQuery(".jw_search_btn a span").click(function () {
-    jQuery(".jw_search_wrap, .overlay").slideToggle();
-    jQuery("body, .jw_main_body .page").toggleClass('noscroll');
-    jQuery(".overlay").toggleClass('overlay_search');
-  });
-  jQuery(document).on("click", ".jw_search_btn a span", function () {
-    var $this = jQuery(this);
-    $this.toggleClass('search_icon');
-    if ($this.hasClass('search_icon')) {
-      $this.text('search');
-    }
-    else {
-      $this.text('close');
-    }
+  jQuery(document).on('click', '.jw_search_btn button', function () {
+    havenToggleSearch(jQuery(this), 'overlay_search');
   });
   setTimeout(function () {
-    jQuery("body").on("click", ".overlay_search", function () {
-      jQuery(".jw_search_btn a span").click();
+    jQuery('body').on('click', '.overlay_search', function () {
+      jQuery('.jw_search_btn button').trigger('click');
     });
   }, 1000);
 
   // mobile_search_wrap
-  jQuery(".jw_mobile_search_btn a span").click(function () {
-    jQuery(".jw_search_wrap, .overlay").slideToggle();
-    jQuery("body, .jw_main_body .page").toggleClass('noscroll');
-    jQuery(".overlay").toggleClass('overlay_mobile_search');
-  });
-  jQuery(document).on("click", ".jw_mobile_search_btn a span", function () {
-    var $this = jQuery(this);
-    $this.toggleClass('mobile_search_icon');
-    if ($this.hasClass('mobile_search_icon')) {
-      $this.text('search');
-    }
-    else {
-      $this.text('close');
-    }
+  jQuery(document).on('click', '.jw_mobile_search_btn button', function () {
+    havenToggleSearch(jQuery(this), 'overlay_mobile_search');
   });
   setTimeout(function () {
-    jQuery("body").on("click", ".overlay_mobile_search", function () {
-      jQuery(".jw_mobile_search_btn a span").click();
+    jQuery('body').on('click', '.overlay_mobile_search', function () {
+      jQuery('.jw_mobile_search_btn button').trigger('click');
     });
   }, 1000);
   // search_wrap
