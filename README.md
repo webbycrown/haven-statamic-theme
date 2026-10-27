@@ -168,7 +168,7 @@ Questions and issues: [github.com/webbycrown/haven-statamic-theme/issues](https:
 
 ## Changelog
 
-### Unreleased
+### v1.0.2
 
 - The contact form escapes the name, phone, email, and message it prints back
 - scroll-zoom.js keeps the Codrops copyright and MIT notice
