@@ -1,7 +1,15 @@
 /**
- * Haven smooth scroll (from Codrops jewellery demo).
- * Starts immediately so the fixed .jw_main_body can scroll;
- * refreshes height after images load.
+ * demo.js
+ * http://www.codrops.com
+ *
+ * Licensed under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ * Copyright 2019, Codrops
+ * http://www.codrops.com
+ *
+ * Adapted for Haven so the fixed .jw_main_body can scroll,
+ * and so height refreshes after images load.
  */
 (function ($) {
   'use strict';

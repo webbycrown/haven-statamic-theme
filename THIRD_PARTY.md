@@ -12,7 +12,7 @@ Libraries and fonts are bundled under `public/assets` and loaded locally (no `ex
 | [Font Awesome Free](https://fontawesome.com) | `css/all.min.css`, `js/all.min.js`, `webfonts/*` | 6.x Free | Font Awesome Free (icons CC BY 4.0, fonts SIL OFL, code MIT) |
 | [imagesLoaded](https://imagesloaded.desandro.com) | `js/imagesloaded.pkgd.min.js` | 4.1.1 | MIT |
 | [jQuery Ripples](https://github.com/sirxemic/jquery.ripples) | `js/jquery.ripples-min.js` | 0.6.3 | MIT |
-| Scroll zoom (Codrops) | `js/scroll-zoom.js` | — | MIT (Codrops) |
+| [Scroll zoom](http://www.codrops.com) | `js/scroll-zoom.js` | — | MIT. Copyright 2019, Codrops. http://www.codrops.com — http://www.opensource.org/licenses/mit-license.php |
 | Theme forms helper | `js/theme-forms.js` | — | Kit |
 | Theme script | `js/custom.js` | — | Kit |
 | Theme stylesheet | `css/style.css` | — | Kit |

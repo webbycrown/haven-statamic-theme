@@ -7,13 +7,13 @@
 		<div class="jw_contact_form">
 			{{ form:contact class="js-theme-form" novalidate="novalidate" }}
 				<label class="jw_sr_only" for="haven-c-name">Name</label>
-				<input id="haven-c-name" type="text" name="name" placeholder="Name" required value="{{ old:name }}">
+				<input id="haven-c-name" type="text" name="name" placeholder="Name" required value="{{ old:name | entities }}">
 				<label class="jw_sr_only" for="haven-c-phone">Phone</label>
-				<input id="haven-c-phone" type="text" name="phone" placeholder="Phone" value="{{ old:phone }}">
+				<input id="haven-c-phone" type="text" name="phone" placeholder="Phone" value="{{ old:phone | entities }}">
 				<label class="jw_sr_only" for="haven-c-email">Email</label>
-				<input id="haven-c-email" type="email" name="email" placeholder="Email" required value="{{ old:email }}">
+				<input id="haven-c-email" type="email" name="email" placeholder="Email" required value="{{ old:email | entities }}">
 				<label class="jw_sr_only" for="haven-c-message">Message</label>
-				<textarea id="haven-c-message" name="message" placeholder="Message" required>{{ old:message }}</textarea>
+				<textarea id="haven-c-message" name="message" placeholder="Message" required>{{ old:message | entities }}</textarea>
 				<button type="submit" class="jw_custom_buttom"><span>{{ setting:contact_button ?? 'Submit' }}</span><span class="jw_arrow_sharp"><img src="/assets/image/arrow.svg" alt=""></span></button>
 				<div class="stay-connect-alert" role="alert"></div>
 				<div class="stay-connect-success">{{ setting:contact_success ?? 'Thanks — we will reply soon.' }}</div>
