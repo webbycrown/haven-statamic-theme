@@ -10,17 +10,17 @@ page_builder:
     slides:
       -
         id: s1
-        image: image/images-1.jpg
+        image: image/haven-linen-shirt.jpg
         title: New season edit
         kicker: Apparel store
       -
         id: s2
-        image: image/images-2.jpg
+        image: image/haven-soft-trousers.jpg
         title: Soft layers
         kicker: Apparel store
       -
         id: s3
-        image: image/images-3.jpg
+        image: image/haven-canvas-tote.jpg
         title: Everyday essentials
         kicker: Apparel store
   -
@@ -28,7 +28,7 @@ page_builder:
     type: about_intro
     heading: Welcome to Haven
     text: Haven is a lifestyle shop for pieces you live with — clothing, furniture, jewellery, and goods for the house.
-    image: image/images-3.jpg
+    image: image/haven-wool-coat.jpg
     button_label: Our story
     button_url: 'entry::about'
   -
@@ -82,8 +82,8 @@ page_builder:
     placeholder: Email
     image_left: image/images-12.jpg
     image_left_title: Studio light
-    image_right: image/images-13.jpg
-    image_right_title: Cloth
+    image_right: image/haven-knit-sweater.jpg
+    image_right_title: Knit
     image_bottom_left: image/images-14.jpg
     image_bottom_left_title: Table
     image_bottom_right: image/images-16.jpg

@@ -12,16 +12,16 @@ page_builder:
     slides:
       -
         id: h2s1
-        image_left: image/images-1.jpg
-        image_right: image/images-2.jpg
+        image_left: image/haven-linen-shirt.jpg
+        image_right: image/haven-wool-coat.jpg
       -
         id: h2s2
-        image_left: image/images-3.jpg
-        image_right: image/images-4.jpg
+        image_left: image/haven-soft-trousers.jpg
+        image_right: image/haven-canvas-tote.jpg
       -
         id: h2s3
-        image_left: image/images-6.jpg
-        image_right: image/images-7.jpg
+        image_left: image/haven-linen-dress.jpg
+        image_right: image/haven-silk-scarf.jpg
   -
     id: h2feat
     type: features
@@ -123,8 +123,8 @@ page_builder:
     placeholder: Email
     image_left: image/images-12.jpg
     image_left_title: Studio light
-    image_right: image/images-13.jpg
-    image_right_title: Cloth
+    image_right: image/haven-knit-sweater.jpg
+    image_right_title: Knit
     image_bottom_left: image/images-14.jpg
     image_bottom_left_title: Table
     image_bottom_right: image/images-16.jpg

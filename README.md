@@ -168,8 +168,10 @@ Questions and issues: [github.com/webbycrown/haven-statamic-theme/issues](https:
 
 ## Changelog
 
-### Unreleased
+### v1.0.3
 
+- Marketplace images are screenshots of the running kit
+- The picture on the right of the home page is the wool coat
 - Category archives list the products assigned to that category
 - An empty category says that nothing is filed there
 - Header search opens from the button, including with Enter
@@ -183,7 +185,6 @@ Questions and issues: [github.com/webbycrown/haven-statamic-theme/issues](https:
 
 ### v1.0.1
 
-- Jewellery photographs are original stills made for Haven, and the display face is Cormorant Garamond (OFL-1.1)
 - Search text and category headings are escaped before they are printed
 - `haven:setup` asks before it replaces products and journal entries
 - A successful cart inquiry empties the session cart
