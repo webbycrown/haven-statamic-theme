@@ -38,10 +38,12 @@ webbycrown/haven-statamic-theme
 
 Open `public/theme-banners.html` on the demo, or the files in `public/assets/images/marketplace/`.
 
-- Thumbnail: `00-haven-thumb.jpg` (600 × 600)
-- Main: `01-haven-main.jpg` (1600 × 900)
-- Screenshots: `02` through `07` (1200 × 800)
+- Thumbnail: `00-haven-thumb.jpg` (600 × 600) — product page
+- Main: `01-haven-main.jpg` (1600 × 900) — home
+- Screenshots, 1200 × 800: `02` home, `03` shop, `04` journal post, `05` product, `06` checkout, `07` cart, `08` Control Panel
 - Zip: `haven-banners.zip`
+
+The files are screenshots of the running kit. They are not photo banners, and they do not use a trial display font. Shop styles in the kit are Shop page, Shop now, and Masonry. `starter-kit.yaml` does not export this folder.
 
 ## Notes for the listing body
 
