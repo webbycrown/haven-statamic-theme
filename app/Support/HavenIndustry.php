@@ -55,16 +55,18 @@ class HavenIndustry
 
         $config = YAML::file($configPath)->parse() ?? [];
         if (! empty($config['data']) && is_array($config['data'])) {
-            // Older Statamic 5 kits kept variables under data: in the config file.
+            // Statamic 5 stores variables under data: in the set file.
             $data = $config['data'];
-            unset($config['data']);
         } else {
+            // Statamic 6 may keep variables in content/globals/default/setting.yaml.
             $data = YAML::file($variablesPath)->parse() ?? [];
         }
 
         $data['industry'] = $industry;
         $data['industry_label'] = $meta['industry_label'] ?? ucfirst($industry).' store';
         $config['title'] = $config['title'] ?? 'Setting';
+        // Write both layouts so the same kit works on Statamic 5 and 6.
+        $config['data'] = $data;
         File::put($configPath, YAML::dump($config));
         File::put($variablesPath, YAML::dump($data));
 

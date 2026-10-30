@@ -1,6 +1,6 @@
 # Haven — Statamic Starter Kit
 
-Haven is a lifestyle commerce starter kit with nine catalogues: jewellery, furniture, apparel, home, beauty, plants, workshop, lighting, and stationery. Built for Statamic 6, it keeps one visual design and swaps demo copy through a post-install industry setup.
+Haven is a lifestyle commerce starter kit with nine catalogues: jewellery, furniture, apparel, home, beauty, plants, workshop, lighting, and stationery. Compatible with Statamic 5 and 6, it keeps one visual design and swaps demo copy through a post-install industry setup.
 
 **One Page template.** Marketing pages use Theme sections in the Control Panel. Functional templates cover product detail, shop cart, blog detail, category archive, account, and sign-in shells.
 
@@ -115,7 +115,7 @@ Statamic Core includes one form. Use **Statamic Pro** if you keep all four. Set 
 ## Installation
 
 Follow the [Starter Kit installation instructions](https://statamic.dev/starter-kits/installing-a-starter-kit).  
-Requires **Statamic 6.x** (PHP 8.3+).
+Requires **Statamic 5.x or 6.x** (PHP 8.2+ for Statamic 5; PHP 8.3+ for Statamic 6).
 
 ```bash
 statamic new my-site webbycrown/haven-statamic-theme
@@ -168,10 +168,11 @@ Questions and issues: [github.com/webbycrown/haven-statamic-theme/issues](https:
 
 ## Changelog
 
-### Unreleased
+### v1.0.4
 
-- Requires Statamic 6
-- Setting globals use the Statamic 6 `content/globals/default/` layout
+- Compatible with Statamic 5 and 6 (`statamic/cms: ^5.0 || ^6.0`)
+- Setting globals ship in both layouts: `data:` in the set file (Statamic 5) and `content/globals/default/setting.yaml` (Statamic 6)
+- `haven:setup` keeps those two Setting files in sync
 
 ### v1.0.3
 
