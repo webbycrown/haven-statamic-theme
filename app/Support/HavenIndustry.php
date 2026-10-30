@@ -49,14 +49,24 @@ class HavenIndustry
             }
         }
 
-        $settingPath = base_path('content/globals/setting.yaml');
-        $setting = YAML::file($settingPath)->parse() ?? [];
-        $data = $setting['data'] ?? [];
+        $configPath = base_path('content/globals/setting.yaml');
+        $variablesPath = base_path('content/globals/default/setting.yaml');
+        File::ensureDirectoryExists(dirname($variablesPath));
+
+        $config = YAML::file($configPath)->parse() ?? [];
+        if (! empty($config['data']) && is_array($config['data'])) {
+            // Older Statamic 5 kits kept variables under data: in the config file.
+            $data = $config['data'];
+            unset($config['data']);
+        } else {
+            $data = YAML::file($variablesPath)->parse() ?? [];
+        }
+
         $data['industry'] = $industry;
         $data['industry_label'] = $meta['industry_label'] ?? ucfirst($industry).' store';
-        $setting['title'] = $setting['title'] ?? 'Setting';
-        $setting['data'] = $data;
-        File::put($settingPath, YAML::dump($setting));
+        $config['title'] = $config['title'] ?? 'Setting';
+        File::put($configPath, YAML::dump($config));
+        File::put($variablesPath, YAML::dump($data));
 
         self::applyHero($meta, $data['industry_label']);
 

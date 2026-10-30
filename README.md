@@ -1,6 +1,6 @@
 # Haven — Statamic Starter Kit
 
-Haven is a lifestyle commerce starter kit with nine catalogues: jewellery, furniture, apparel, home, beauty, plants, workshop, lighting, and stationery. Built for Statamic 5, it keeps one visual design and swaps demo copy through a post-install industry setup.
+Haven is a lifestyle commerce starter kit with nine catalogues: jewellery, furniture, apparel, home, beauty, plants, workshop, lighting, and stationery. Built for Statamic 6, it keeps one visual design and swaps demo copy through a post-install industry setup.
 
 **One Page template.** Marketing pages use Theme sections in the Control Panel. Functional templates cover product detail, shop cart, blog detail, category archive, account, and sign-in shells.
 
@@ -115,7 +115,7 @@ Statamic Core includes one form. Use **Statamic Pro** if you keep all four. Set 
 ## Installation
 
 Follow the [Starter Kit installation instructions](https://statamic.dev/starter-kits/installing-a-starter-kit).  
-Requires **Statamic 5.x**.
+Requires **Statamic 6.x** (PHP 8.3+).
 
 ```bash
 statamic new my-site webbycrown/haven-statamic-theme
@@ -167,6 +167,11 @@ See [THIRD_PARTY.md](THIRD_PARTY.md) for bundled front-end libraries and licence
 Questions and issues: [github.com/webbycrown/haven-statamic-theme/issues](https://github.com/webbycrown/haven-statamic-theme/issues) or [WebbyCrown](https://www.webbycrown.com/custom-statamic-development-services-company/).
 
 ## Changelog
+
+### Unreleased
+
+- Requires Statamic 6
+- Setting globals use the Statamic 6 `content/globals/default/` layout
 
 ### v1.0.3
 

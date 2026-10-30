@@ -3,7 +3,7 @@
     "type": "statamic-starter-kit",
     "description": "Haven — lifestyle commerce starter kit for apparel, furniture, jewellery, and home brands.",
     "require": {
-        "statamic/cms": "^5.0"
+        "statamic/cms": "^6.0"
     },
     "extra": {
         "statamic": {
